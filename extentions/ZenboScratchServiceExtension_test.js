@@ -544,7 +544,55 @@
      return false;
     };
 
+	
+	ext.when_listen_number_and_run = function(ip) {
+       
+    var checkFlag = false;
+    var valueIndex = 0;
 
+    for(var i=0; i < flagArray.data.length; i++){
+
+             if ( ip == flagArray.data[i].device) {
+                  checkFlag = true;
+                  valueIndex = i;
+             }
+    }
+
+    if ( checkFlag === false )
+    return false;
+
+    
+	if (flagArray.data[valueIndex].number_flag === true) {
+           flagArray.data[valueIndex].number_flag = false;
+           return true;
+    }
+
+     return false;
+    };
+
+	
+    ext.getCorrectedSentence = function(ip) {
+       
+    var checkFlag = false;
+    var valueIndex = 0;
+
+    for(var i=0; i < flagArray.data.length; i++){
+
+             if ( ip == flagArray.data[i].device) {
+                  checkFlag = true;
+                  valueIndex = i;
+             }
+    }
+
+    if ( checkFlag === false )
+    return "no device";
+
+    console.log('getCorrectedSentence:' + flagArray.data[valueIndex].correctedSentence);   
+  		
+     return flagArray.data[valueIndex].correctedSentence;
+    };
+
+	
 
     var descriptor = {
         blocks: [
@@ -565,6 +613,8 @@
             ['', 'IP %s 我要開始聽', 'Speak_and_listen', "192.168.0.1"], 
             ['h', '當我聽到 IP %s 的 %m.sentence_type', 'when_listen_and_run', "192.168.0.1", '語句一'],
             ['', 'IP %s 刪除全部語句', 'Delete_instance', "192.168.0.1"],
+            ['h', '當我聽到 IP %s 的數字', 'when_listen_number_and_run', "192.168.0.1"],
+            ['r', '目前 IP %s 的數字內容 ', 'getCorrectedSentence', "192.168.0.1"],
         ],
         menus: {
             "head_direction": ["左", "右", "上", "下"],
