@@ -261,7 +261,7 @@
 			}
 		  
 			if (setupFlag == true) {
-				flagArray.data.push( { device: ip,  sentence_1_flag: false, sentence_2_flag: false, sentence_3_flag: false, sentence_4_flag: false, sentence_5_flag: false, get_sentences_flag: true } );
+				flagArray.data.push( { device: ip, correctedSentence: "", sentence_1_flag: false, sentence_2_flag: false, sentence_3_flag: false, sentence_4_flag: false, sentence_5_flag: false, number_flag: false, get_sentences_flag: true } );
 				console.log("add new device IP and its flags");
 				flagIndex = flagArray.data.length -1 ;  
 				console.log("true " + "flagIndex: "+ flagIndex);
@@ -289,8 +289,21 @@
 				crossDomain: true,
 				success: function (data) {
 				console.log("Get_sentences-success handler");
+                                                       
+                                var splitedData =  data.split(",");
+                                console.log('splitedData:' + splitedData);
+                                flagArray.data[flagIndex].correctedSentence = splitedData[1]; 
+                                console.log('correctedSentence:' + splitedData[1]);
 
-				switch(data) {
+				switch(splitedData[0]) {
+
+                                        case 'number':
+                                 
+                                              console.log('辨識到number');
+                                              console.log( ip + " "  + flagIndex + "number_flag true");
+                                              flagArray.data[flagIndex].number_flag = true;
+                                              
+                                              break; 
 
 					case '語句一':
 						
@@ -302,7 +315,7 @@
 
 					case '語句二':
 						
-						console.log('辨識到語句二'); 
+  				        	console.log('辨識到語句二'); 
 						console.log( ip + " "  + flagIndex + "sentence_2_flag true");
 						flagArray.data[flagIndex].sentence_2_flag = true;
 
@@ -336,8 +349,8 @@
 					   
 				}  
 
-                 flagArray.data[flagIndex].get_sentences_flag = true;
-                 getSentencesRecursion(ip, flagIndex);  				 
+                                flagArray.data[flagIndex].get_sentences_flag = true;
+                                getSentencesRecursion(ip, flagIndex);  				 
 				
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
@@ -515,10 +528,7 @@
            return true;
        }
 
-
-
         break;
-
 
     case '語句五':
 
