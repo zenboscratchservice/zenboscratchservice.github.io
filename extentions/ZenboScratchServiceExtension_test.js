@@ -292,9 +292,7 @@
                                                        
                                 var splitedData =  data.split(",");
                                 console.log('splitedData:' + splitedData);
-                                flagArray.data[flagIndex].correctedSentence = splitedData[1]; 
-                                console.log('correctedSentence:' + splitedData[1]);
-
+                                
 				switch(splitedData[0]) {
 
                                         case 'number':
@@ -302,6 +300,8 @@
                                               console.log('辨識到number');
                                               console.log( ip + " "  + flagIndex + "number_flag true");
                                               flagArray.data[flagIndex].number_flag = true;
+                                              flagArray.data[flagIndex].correctedSentence = splitedData[1];
+                                              console.log('correctedSentence:' + flagArray.data[flagIndex].correctedSentence);
                                               
                                               break; 
 
