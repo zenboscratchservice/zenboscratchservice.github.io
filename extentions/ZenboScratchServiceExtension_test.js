@@ -545,20 +545,20 @@
     };
 
 	
-	ext.when_listen_number_and_run = function(ip) {
+    ext.when_listen_number_and_run = function(ip) {
        
-    var checkFlag = false;
-    var valueIndex = 0;
+    var checkFlag_2 = false;
+    var valueIndex_2 = 0;
 
     for(var i=0; i < flagArray.data.length; i++){
 
              if ( ip == flagArray.data[i].device) {
-                  checkFlag = true;
-                  valueIndex = i;
+                  checkFlag_2 = true;
+                  valueIndex_2 = i;
              }
     }
 
-    if ( checkFlag === false )
+    if ( checkFlag_2 === false )
     return false;
 
     
@@ -573,18 +573,18 @@
 	
     ext.getCorrectedSentence = function(ip) {
        
-    var checkFlag = false;
-    var valueIndex = 0;
+    var checkFlag_3 = false;
+    var valueIndex_3 = 0;
 
     for(var i=0; i < flagArray.data.length; i++){
 
              if ( ip == flagArray.data[i].device) {
-                  checkFlag = true;
-                  valueIndex = i;
+                  checkFlag_3 = true;
+                  valueIndex_3 = i;
              }
     }
 
-    if ( checkFlag === false )
+    if ( checkFlag_3 === false )
     return "no device";
 
     console.log('getCorrectedSentence:' + flagArray.data[valueIndex].correctedSentence);   
