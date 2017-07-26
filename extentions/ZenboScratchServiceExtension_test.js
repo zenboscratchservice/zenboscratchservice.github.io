@@ -558,15 +558,21 @@
              }
     }
 
-    if ( checkFlag_2 === false )
+    console.log('checkFlag_2:' + checkFlag_2 );
+
+    if ( checkFlag_2 === false ) {
+    console.log('number: false');
     return false;
 
+    }
     
-	if (flagArray.data[valueIndex_2].number_flag === true) {
+    if (flagArray.data[valueIndex_2].number_flag === true) {
            flagArray.data[valueIndex_2].number_flag = false;
+           console.log('number: true');  
            return true;
     }
 
+     console.log('number: false'); 
      return false;
     };
 
