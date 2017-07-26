@@ -561,7 +561,6 @@
     console.log('checkFlag_2:' + checkFlag_2 );
 
     if ( checkFlag_2 === false ) {
-    console.log('number: false');
     return false;
 
     }
@@ -572,7 +571,6 @@
            return true;
     }
 
-     console.log('number: false'); 
      return false;
     };
 
@@ -590,8 +588,9 @@
              }
     }
 
-    if ( checkFlag_3 === false )
+    if ( checkFlag_3 === false ) {
     return "no device";
+    }
 
     console.log('getCorrectedSentence:' + flagArray.data[valueIndex_3].correctedSentence);   
   		
