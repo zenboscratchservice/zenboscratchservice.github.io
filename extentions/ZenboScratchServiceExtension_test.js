@@ -562,8 +562,8 @@
     return false;
 
     
-	if (flagArray.data[valueIndex].number_flag === true) {
-           flagArray.data[valueIndex].number_flag = false;
+	if (flagArray.data[valueIndex_2].number_flag === true) {
+           flagArray.data[valueIndex_2].number_flag = false;
            return true;
     }
 
@@ -587,9 +587,9 @@
     if ( checkFlag_3 === false )
     return "no device";
 
-    console.log('getCorrectedSentence:' + flagArray.data[valueIndex].correctedSentence);   
+    console.log('getCorrectedSentence:' + flagArray.data[valueIndex_3].correctedSentence);   
   		
-     return flagArray.data[valueIndex].correctedSentence;
+     return flagArray.data[valueIndex_3].correctedSentence;
     };
 
 	
