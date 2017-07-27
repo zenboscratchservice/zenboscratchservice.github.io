@@ -77,7 +77,7 @@
                     case 'number':
                                  
                         console.log('辨識到number');
-                        console.log( ip + " "  + flagIndex + "number_flag true");
+                        console.log( ip + " "  + flagIndex + " " + "number_flag true");
                         flagArray.data[flagIndex].number_flag = true;
                         flagArray.data[flagIndex].correctedSentence = data.split(",")[1];
                         console.log('correctedSentence:' + flagArray.data[flagIndex].correctedSentence);
@@ -87,15 +87,15 @@
 					case '語句一':
 						
 						console.log('辨識到語句一'); 
-						console.log( ip + " "  + flagIndex + "sentence_1_flag true");
+						console.log( ip + " "  + flagIndex + " " + "sentence_1_flag true");
 						flagArray.data[flagIndex].sentence_1_flag = true;
 
 						break;
 
 					case '語句二':
 						
-  				        	console.log('辨識到語句二'); 
-						console.log( ip + " "  + flagIndex + "sentence_2_flag true");
+  				        console.log('辨識到語句二'); 
+						console.log( ip + " "  + flagIndex + " " + "sentence_2_flag true");
 						flagArray.data[flagIndex].sentence_2_flag = true;
 
 						break;
@@ -104,7 +104,7 @@
 						
 
 						console.log('辨識到語句三');  
-						console.log( ip + " "  + flagIndex + "sentence_3_flag true");
+						console.log( ip + " "  + flagIndex + " " + "sentence_3_flag true");
 						flagArray.data[flagIndex].sentence_3_flag = true;
 
 						break;
@@ -112,7 +112,7 @@
 					case '語句四':
 						
 						console.log('辨識到語句四'); 
-						console.log( ip + " "  + flagIndex + "sentence_4_flag true");
+						console.log( ip + " "  + flagIndex + " " + "sentence_4_flag true");
 						flagArray.data[flagIndex].sentence_4_flag = true;
 
 						break;
@@ -121,28 +121,27 @@
 					case '語句五':
 
 						console.log('辨識到語句五');                   
-						console.log( ip + " "  + flagIndex + "sentence_5_flag true");
+						console.log( ip + " "  + flagIndex + " " + "sentence_5_flag true");
 						flagArray.data[flagIndex].sentence_5_flag = true;
 
 					   break;
 					   
 				}  
 
-                                flagArray.data[flagIndex].get_sentences_flag = true;
-                                getSentencesRecursion(ip, flagIndex);  				 
+                flagArray.data[flagIndex].get_sentences_flag = true;
+                getSentencesRecursion(ip, flagIndex);  				 
 				
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
 					console.log("error handler");
 			 
-			     flagArray.data[flagIndex].get_sentences_flag = true;
-                 	     getSentencesRecursion(ip, flagIndex);	 
+			    flagArray.data[flagIndex].get_sentences_flag = true;
+                getSentencesRecursion(ip, flagIndex);	 
 					
 				}
 			});
 				
             }    
-	
 	
 	
     };
@@ -450,15 +449,6 @@
             crossDomain: true,
             success: function (data) {
                 console.log("success handler");
-                if (p1 == data) {  
-                    callback(true);
-                    console.log("true");  
-                }
-                else { 
-                    callback(false);
-                    console.log("false");
-                } 
-
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("error handler");
