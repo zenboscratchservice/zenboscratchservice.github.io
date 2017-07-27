@@ -619,7 +619,7 @@
             ['h', '當我聽到 IP %s 的 %m.sentence_type', 'when_listen_and_run', "192.168.0.1", '語句一'],
             ['', 'IP %s 刪除全部語句', 'Delete_instance', "192.168.0.1"],
             ['h', '當我聽到 IP %s 的數字', 'when_listen_number_and_run', "192.168.0.1"],
-            ['r', '目前 IP %s 的數字內容 ', 'getCorrectedSentence', "192.168.0.1"],
+            ['r', '目前 IP %s 聽到的數字 ', 'getCorrectedSentence', "192.168.0.1"],
         ],
         menus: {
             "head_direction": ["左", "右", "上", "下"],
