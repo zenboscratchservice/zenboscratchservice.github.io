@@ -462,7 +462,7 @@
     var checkFlag = false;
     var valueIndex = 0;
 
-    for(var i=0; i < flagArray.data.length; i++){
+    for(var i = 0; i < flagArray.data.length; i++){
 
              if ( ip == flagArray.data[i].device) {
                   checkFlag = true;
@@ -534,25 +534,24 @@
 	
     ext.when_listen_number_and_run = function(ip) {
        
-    var checkFlag_2 = false;
-    var valueIndex_2 = 0;
+    var valueIndex_2 = -1;
 
-    for(var i=0; i < flagArray.data.length; i++){
+    for(var j = 0; j < flagArray.data.length; j++){
 
-             if ( ip == flagArray.data[i].device) {
-                  checkFlag_2 = true;
-                  valueIndex_2 = i;
+             if ( ip == flagArray.data[j].device) {          
+                  valueIndex_2 = j;
              }
     }
 
-    if ( checkFlag_2 === false ) {
-    return false;
-
-    }
-    
+    if ( valueIndex_2 === -1 ) {
+	
+        console.log('valueIndex_2 === -1');  	
+		return false;
+	}
+         
     if (flagArray.data[valueIndex_2].number_flag === true) {
-           flagArray.data[valueIndex_2].number_flag = false;
-           console.log('true number');  
+		   console.log('true number'); 
+           flagArray.data[valueIndex_2].number_flag = false;             
            return true;
     }
 
@@ -562,22 +561,22 @@
 	
     ext.getCorrectedSentence = function(ip) {
        
-    var checkFlag_3 = false;
-    var valueIndex_3 = 0;
+    var valueIndex_3 = -1;
 
-    for(var i=0; i < flagArray.data.length; i++){
+    for(var k = 0; k < flagArray.data.length; k++){
 
-             if ( ip == flagArray.data[i].device) {
-                  checkFlag_3 = true;
-                  valueIndex_3 = i;
+             if ( ip == flagArray.data[k].device) {               
+                  valueIndex_3 = k;
              }
     }
+	
+    if ( valueIndex_3 === -1 ) {
+	
+        console.log('valueIndex_3 === -1');  	
+		return 'no device';
+	}
 
-    if ( checkFlag_3 === false ) {
-    return "no device";
-    }
-
-    console.log('getCorrectedSentence:' + flagArray.data[valueIndex_3].correctedSentence);   
+    console.log('getCorrectedSentence: ' + flagArray.data[valueIndex_3].correctedSentence);   
   		
      return flagArray.data[valueIndex_3].correctedSentence;
     };
