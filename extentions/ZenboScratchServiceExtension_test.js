@@ -19,7 +19,7 @@
         console.log("Setting_targetIP");
 		
 		$.ajax({
-            url: 'http://' + ip + port + '/?name=Remote_control_body',
+            url: 'http://' + ip + port + '/?name=Add_and_update_sentence' + '&p1=' + 'test' + '&p2=' + 'zenbo',
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
@@ -57,7 +57,7 @@
         return ip;
     };
 
-		var getSentencesRecursion = function(ip, flagIndex) {
+	var getSentencesRecursion = function(ip, flagIndex) {
 
 		if ( flagArray.data[flagIndex].get_sentences_flag === true ) {  	 
 			 flagArray.data[flagIndex].get_sentences_flag = false;  
@@ -69,21 +69,20 @@
 				crossDomain: true,
 				success: function (data) {
 				console.log("Get_sentences-success handler");
-                                                       
-                                var splitedData =  data.split(",");
-                                console.log('splitedData:' + splitedData);
+                               
+                console.log('splitedData[0]' + data.split(",")[0]);
                                 
-				switch(splitedData[0]) {
+				switch(data.split(",")[0]) {
 
-                                        case 'number':
+                    case 'number':
                                  
-                                              console.log('辨識到number');
-                                              console.log( ip + " "  + flagIndex + "number_flag true");
-                                              flagArray.data[flagIndex].number_flag = true;
-                                              flagArray.data[flagIndex].correctedSentence = splitedData[1];
-                                              console.log('correctedSentence:' + flagArray.data[flagIndex].correctedSentence);
+                        console.log('辨識到number');
+                        console.log( ip + " "  + flagIndex + "number_flag true");
+                        flagArray.data[flagIndex].number_flag = true;
+                        flagArray.data[flagIndex].correctedSentence = data.split(",")[1];
+                        console.log('correctedSentence:' + flagArray.data[flagIndex].correctedSentence);
                                               
-                                              break; 
+                        break; 
 
 					case '語句一':
 						
