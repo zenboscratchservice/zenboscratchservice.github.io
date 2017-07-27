@@ -19,7 +19,7 @@
         console.log("Setting_targetIP");
 		
 		$.ajax({
-            url: 'http://' + ip + port + '/?name=testZenbo',
+            url: 'http://' + ip + port + '/?name=Remote_control_body',
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
