@@ -581,6 +581,26 @@
      return flagArray.data[valueIndex_3].correctedSentence;
     };
 
+
+    ext.playVideosInYoutube = function (ip, p1, p2, callback) {
+        console.log("playVideosInYoutube");
+        console.log(ip);
+        console.log(p1);
+        console.log(p2);
+        $.ajax({
+            url: 'http://' + ip + port + '/?name=playVideosInYoutube' + '&p1=' + p1 + '&p2=' + p2,
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+            }
+        });
+    };
+
 	
 
     var descriptor = {
@@ -604,6 +624,7 @@
             ['', 'IP %s 刪除全部語句', 'Delete_instance', "192.168.0.1"],
             ['h', '當我聽到 IP %s 的數字', 'when_listen_number_and_run', "192.168.0.1"],
             ['r', '目前 IP %s 聽到的數字 ', 'getCorrectedSentence', "192.168.0.1"],
+            ['', 'IP %s 播放Youtube網址: %s , 影片%m.playVideosInYoutubeItems', 'playVideosInYoutube', "192.168.0.1",'https://www.youtube.com/watch?v=09R8_2nJtjg', '開始'], 
         ],
         menus: {
             "head_direction": ["左", "右", "上", "下"],
@@ -626,6 +647,7 @@
             "volume_option_type": ["音樂", "鬧鐘", "通知", "說話"],
             "tts_speed_type": ["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"],
             "sentence_type": ["語句一", "語句二", "語句三", "語句四", "語句五"],
+            "playVideosInYoutubeItems": ["開始", "暫停"],
         },
         url: 'https://zenboscratchservice.github.io/' // Link to extension documentation, homepage, etc.
     };
