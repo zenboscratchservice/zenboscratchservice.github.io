@@ -647,7 +647,7 @@
             "volume_option_type": ["音樂", "鬧鐘", "通知", "說話"],
             "tts_speed_type": ["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"],
             "sentence_type": ["語句一", "語句二", "語句三", "語句四", "語句五"],
-            "playVideosInYoutubeItems": ["開始", "暫停"],
+            "playVideosInYoutubeItems": ["開始", "關閉"],
         },
         url: 'https://zenboscratchservice.github.io/' // Link to extension documentation, homepage, etc.
     };
