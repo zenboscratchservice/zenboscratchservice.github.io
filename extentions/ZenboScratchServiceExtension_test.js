@@ -663,7 +663,7 @@
             ['h', '當我聽到 IP %s 的數字', 'when_listen_number_and_run', "192.168.0.1"],
             ['r', '目前 IP %s 聽到的數字 ', 'getCorrectedSentence', "192.168.0.1"],
             ['', 'IP %s 播放Youtube網址: %s , 影片%m.playVideosInYoutubeItems', 'playVideosInYoutube', "192.168.0.1",'https://www.youtube.com/watch?v=09R8_2nJtjg', '開始'],
-            ['', 'IP %s 瀏覽線上圖片: %s , 顯示%m.displayUrlPicturesItems', 'displayUrlPictures', "192.168.0.1",'https://i.imgur.com/oMLgW0N.jpg', '開始'],
+            ['', 'IP %s 瀏覽線上圖片: %s , 顯示%m.displayUrlPicturesItems', 'displayUrlPictures', "192.168.0.1",'http://seacrestwolfpreserve.org/site/templates/images/home-slider-wolf-face-01.jpg', '開始'],
             ['', 'IP %s 播放線上音樂: %s , 音樂%m.playUrlMusicItems', 'playUrlMusic', "192.168.0.1",'http://www.abstractpath.com/files/audiosamples/sample.mp3', '開始'],
         ],
         menus: {
