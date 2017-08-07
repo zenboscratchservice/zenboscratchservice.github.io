@@ -582,7 +582,7 @@
     };
 
 
-    ext.playVideosInYoutube = function (ip, p1, p2, callback) {
+    ext.playVideosInYoutube = function (ip, p1, p2) {
         console.log("playVideosInYoutube");
         console.log(ip);
         console.log(p1);
@@ -601,7 +601,7 @@
         });
     };
 
-    ext.displayUrlPictures = function (ip, p1, p2, callback) {
+    ext.displayUrlPictures = function (ip, p1, p2) {
         console.log("displayUrlPictures");
         console.log(ip);
         console.log(p1);
@@ -620,7 +620,7 @@
         });
     };
 	
-    ext.playUrlMusic = function (ip, p1, p2, callback) {
+    ext.playUrlMusic = function (ip, p1, p2) {
         console.log("playUrlMusic");
         console.log(ip);
         console.log(p1);
@@ -639,6 +639,22 @@
         });
     };
 
+    ext.hideFace = function (ip) {
+        console.log("hideFace");
+        console.log(ip);
+        $.ajax({
+            url: 'http://' + ip + port + '/?name=hideFace',
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+            }
+        });
+    };
 
 
     var descriptor = {
@@ -652,6 +668,7 @@
             ['', 'IP %s 做出罐頭動作 %m.action_type', 'Action', "192.168.0.1", '打招呼'],
             ['', 'IP %s 停止罐頭動作', 'Cancel_actionset', "192.168.0.1"],
             ['', 'IP %s 做出表情 %m.facial_type', 'Facial', "192.168.0.1", '期待'],
+            ['', 'IP %s 隱藏表情', 'hideFace', "192.168.0.1"],
             ['', 'IP %s 說話 %m.tts_type ', 'TTS', "192.168.0.1", 'Hi,你好'],
             ['', 'IP %s 說話 %s', 'TTS_editor', "192.168.0.1", '請填入文字'],
             ['', 'IP %s 調整 %m.volume_option_type 音量 %m.volume_type', 'Adjust_stream_volume', "192.168.0.1", '說話', '大聲點'],
