@@ -662,9 +662,9 @@
             ['', 'IP %s 刪除全部語句', 'Delete_instance', "192.168.0.1"],
             ['h', '當我聽到 IP %s 的數字', 'when_listen_number_and_run', "192.168.0.1"],
             ['r', '目前 IP %s 聽到的數字 ', 'getCorrectedSentence', "192.168.0.1"],
-            ['', 'IP %s: %m.playVideosInYoutubeItems 播放Youtube網址: %s', 'playVideosInYoutube', "192.168.0.1", '開始', 'https://www.youtube.com/watch?v=09R8_2nJtjg'],
-            ['', 'IP %s: %m.displayUrlPicturesItems 瀏覽線上圖片: %s', 'displayUrlPictures', "192.168.0.1", '開始', 'http://seacrestwolfpreserve.org/site/templates/images/home-slider-wolf-face-01.jpg'],
-            ['', 'IP %s: %m.playUrlMusicItems 播放線上音樂: %s', 'playUrlMusic', "192.168.0.1", '開始', 'http://www.abstractpath.com/files/audiosamples/sample.mp3'],
+            ['', 'IP %s %m.playVideosInYoutubeItems 播放Youtube網址: %s', 'playVideosInYoutube', "192.168.0.1", '開始', 'https://www.youtube.com/watch?v=09R8_2nJtjg'],
+            ['', 'IP %s %m.displayUrlPicturesItems 瀏覽線上圖片: %s', 'displayUrlPictures', "192.168.0.1", '開始', 'http://seacrestwolfpreserve.org/site/templates/images/home-slider-wolf-face-01.jpg'],
+            ['', 'IP %s %m.playUrlMusicItems 播放線上音樂: %s', 'playUrlMusic', "192.168.0.1", '開始', 'http://www.abstractpath.com/files/audiosamples/sample.mp3'],
         ],
         menus: {
             "head_direction": ["左", "右", "上", "下"],
