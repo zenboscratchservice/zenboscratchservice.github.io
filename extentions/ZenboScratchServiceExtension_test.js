@@ -682,6 +682,7 @@
             ['', 'IP %s %m.playVideosInYoutubeItems 播放Youtube網址: %s', 'playVideosInYoutube', "192.168.0.1", '開始', 'https://www.youtube.com/watch?v=09R8_2nJtjg'],
             ['', 'IP %s %m.displayUrlPicturesItems 瀏覽線上圖片: %s', 'displayUrlPictures', "192.168.0.1", '開始', 'http://seacrestwolfpreserve.org/site/templates/images/home-slider-wolf-face-01.jpg'],
             ['', 'IP %s %m.playUrlMusicItems 播放線上音樂: %s', 'playUrlMusic', "192.168.0.1", '開始', 'http://www.abstractpath.com/files/audiosamples/sample.mp3'],
+            ['', 'IP %s %m.openDriveUrlItems 瀏覽Google Drive網址: %s', 'openDriveUrl', "192.168.0.1", '開始', 'https://drive.google.com/open?id=0B5o6VwYT7NaiUUhrTW12Ql9tcUk'],
         ],
         menus: {
             "head_direction": ["左", "右", "上", "下"],
@@ -707,6 +708,7 @@
             "playVideosInYoutubeItems": ["開始", "關閉"],
             "displayUrlPicturesItems": ["開始", "關閉"],
             "playUrlMusicItems": ["開始", "關閉"],
+            "openDriveUrlItems": ["開始", "關閉"],
         },
         url: 'https://zenboscratchservice.github.io/' // Link to extension documentation, homepage, etc.
     };
