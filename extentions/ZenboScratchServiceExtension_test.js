@@ -656,6 +656,25 @@
         });
     };
 
+    ext.openDriveUrl = function (ip, p1, p2) {
+        console.log("openDriveUrl");
+        console.log(ip);
+        console.log(p1);
+        console.log(p2);
+        $.ajax({
+            url: 'http://' + ip + port + '/?name=openDriveUrl' + '&p1=' + p1 + '&p2=' + p2,
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+            }
+        });
+    };
+
 
     var descriptor = {
         blocks: [
