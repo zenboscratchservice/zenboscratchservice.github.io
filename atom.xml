@@ -47,7 +47,7 @@
     <link href="http://zenboscratchservice.github.io/2017/06/08/ZenboScratchService-SOP/"/>
     <id>http://zenboscratchservice.github.io/2017/06/08/ZenboScratchService-SOP/</id>
     <published>2017-06-08T05:58:31.000Z</published>
-    <updated>2017-08-04T09:02:16.846Z</updated>
+    <updated>2017-08-16T08:04:06.234Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Launch-ZenboScratchService-and-there-is-an-IP-address-if-it-work-well-notice-that-the-target-Zenbo-device-and-Host-PC-must-connect-to-the-same-Wi-Fi-AP"><a href="#1-Launch-ZenboScratchService-and-there-is-an-IP-address-if-it-work-well-notice-that-the-target-Zenbo-device-and-Host-PC-must-connect-to-the-same-Wi-Fi-AP" class="headerlink" title="1. Launch ZenboScratchService and there is an IP address if it work well (notice that the target Zenbo device and Host PC must connect to the same Wi-Fi AP):"></a>1. Launch ZenboScratchService and there is an IP address if it work well <font color="#ff0000">(notice that the target Zenbo device and Host PC must connect to the same Wi-Fi AP)</font>:</h1><p><img src="/images/1-1.png" width="75%" height="75%" align="center/"></p>
 <p><img src="/images/1-2.png" width="75%" height="75%" align="center/"></p>
@@ -62,40 +62,40 @@
 <tr>
 <th>Category</th>
 <th>Example Link</th>
-<th>Reference</th>
 <th>Version</th>
+<th>Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Quiz show</td>
 <td><a href="https://zenboscratchservice.github.io/examples/Zenbo_歷史機智問答.sbx">歷史機智問答</a></td>
-<td>…</td>
 <td>v1.1</td>
+<td>…</td>
 </tr>
 <tr>
 <td>Crosstalk</td>
 <td><a href="https://zenboscratchservice.github.io/examples/Zenbo_莊子_子非魚安知魚之樂.sbx">莊子-子非魚安知魚之樂</a></td>
-<td><a href="https://scratch.mit.edu/projects/162220958/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/162220958/</a></td>
 <td>v1.0</td>
+<td><a href="https://scratch.mit.edu/projects/162220958/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/162220958/</a></td>
 </tr>
 <tr>
 <td>Game</td>
 <td><a href="https://zenboscratchservice.github.io/examples/ZenboAnnouncer.sbx">足球比賽播報員</a></td>
+<td>v1.0</td>
 <td><a href="https://scratch.mit.edu/projects/47835062/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/47835062/</a></td>
-<td>v1.0</td>
 </tr>
 <tr>
-<td>Edcation</td>
+<td>Education</td>
 <td><a href="https://zenboscratchservice.github.io/examples/一起來學水果單字.sbx">一起來學水果單字</a></td>
-<td><a href="https://scratch.mit.edu/projects/126771101/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/126771101/</a></td>
 <td>v1.0</td>
+<td><a href="https://scratch.mit.edu/projects/126771101/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/126771101/</a></td>
 </tr>
 <tr>
-<td>Edcation</td>
+<td>Education</td>
 <td><a href="https://zenboscratchservice.github.io/examples/教你玩塗鴉.sbx">教你玩塗鴉</a></td>
-<td><a href="https://scratch.mit.edu/projects/598970/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/598970/</a></td>
 <td>v1.0</td>
+<td><a href="https://scratch.mit.edu/projects/598970/" rel="external nofollow noopener noreferrer" target="_blank">https://scratch.mit.edu/projects/598970/</a></td>
 </tr>
 </tbody>
 </table>
