@@ -32,7 +32,7 @@ figcaption {
   -webkit-transition: opacity 1.2s;
   transition: opacity 1.2s;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  backface-visibility: hidfden;
 
 }
 .bss-slides .bss-show{
@@ -49,8 +49,8 @@ figcaption {
 
 .bss-slides figcaption{
   position: absolute;
-  font-family: sans-serif;
-  font-size: .8em;
+  font-family: sans-serif, "微軟正黑體";
+  /*font-size: .8em;*/
   bottom: .75em;
 	
   /*right: .35em;*/
@@ -60,7 +60,7 @@ figcaption {
   background: #000;
   /*background: rgba(0,0,0, .25);*/
 	background: rgba(0,0,0, .5);
-  border-radius: 2px;
+  border-radius: 12px;
   opacity: 0;
   -webkit-transition: opacity 1.2s;
   transition: opacity 1.2s;
@@ -93,20 +93,26 @@ figcaption {
   opacity: 1;
 }
 .bss-next{
-  right: -1px;
-  padding: 10px 5px 15px 10px;
+  /*right: -1px;*/
+	right: 15px;
+  padding: 30px 5px 35px 10px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-}
-.bss-prev{
-  left: 0;
-  padding: 10px 10px 15px 5px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+.bss-prev{
+  /*left: 0;*/
+	left: 15px;
+  padding: 30px 10px 35px 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
 
 
-/*
+
 
 .bss-fullscreen{
   display: block;

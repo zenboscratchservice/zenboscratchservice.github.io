@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Zenbo Scratch - 首頁</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<!--add lity-->
-	<link rel="stylesheet" href="css/lity.css">
+<meta charset="UTF-8">
+<title>Zenbo Scratch - 首頁</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<!--add lity-->
+<link rel="stylesheet" href="css/lity.css">
 </head>
 <body>
 <div id="background-zenboblue"> background </div>
 <div class="page">
   <div class="home-page">
-    <div class="sidebar"> <a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
+    <div class="sidebar"> <a href="pages/about.html" id="logo"><img src="images/logo.png" alt="logo"></a>
       <ul>
         <li class="selected home"> <a href="index.html">首頁</a> </li>
         <li class="start"> <a href="pages/start.html">開始使用</a> </li>
@@ -54,15 +54,28 @@
           </ul>
         </div>
       </div>
-      <div class="footer">
-        <p> &#169; 2017 Zenbo Dev Lab </p>
+      <div class="footer"> 
         <ul>
+          <li> <a href="pages/about.html">關於</a> </li>
           <li> <a href="index.html">首頁</a> </li>
           <li> <a href="pages/start.html">開始使用</a> </li>
           <li> <a href="pages/example.html">範例</a> </li>
           <li> <a href="pages/block.html">方塊</a> </li>
           <li> <a href="pages/blog.html">部落格</a> </li>
         </ul>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-middle-email" style="cursor: pointer;" onclick="window.open('mailto:zenbo.scratchservice@gmail.com','_newtab');"> <img src="images/footer-email.png" alt=""><a>聯絡我們: zenbo.scratchservice@gmail.com</a> </div>
+        <div class="footer-middle-youtube" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/channel/UCpHbyKwWAkbJ2terDCcGbYA','_newtab');"> <img src="images/footer-youtube.png" alt=""> <a href="" target="youtube_tag1" id="youtube">Youtube 頻道</a> </div>
+      </div>
+      <div class="footer-bottom">
+        <ul>
+          <li> <img src="images/footer-earth.png" alt=""><a href="pages/language.html">繁體中文</a> </li>
+        </ul>
+        <ul>
+          <li> <a>&#169; 2017 Zenbo Dev Lab</a> </li>
+        </ul>
+        <!--<p> &#169; 2017 Zenbo Dev Lab </p>--> 
       </div>
     </div>
   </div>

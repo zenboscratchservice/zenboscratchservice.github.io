@@ -93,20 +93,26 @@ figcaption {
   opacity: 1;
 }
 .bss-next{
-  right: -1px;
-  padding: 10px 5px 15px 10px;
+  /*right: -1px;*/
+	right: 15px;
+  padding: 30px 5px 35px 10px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-}
-.bss-prev{
-  left: 0;
-  padding: 10px 10px 15px 5px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+.bss-prev{
+  /*left: 0;*/
+	left: 15px;
+  padding: 30px 10px 35px 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
 
 
-/*
+
 
 .bss-fullscreen{
   display: block;

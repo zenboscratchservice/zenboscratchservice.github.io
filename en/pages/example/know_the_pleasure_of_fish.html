@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zenbo Scratch - Example: Know the Pleasure of Fish</title>
+<link rel="stylesheet" href="../../css/style.css" type="text/css">
+<!--add lity-->
+<link href="../../css/lity.css" rel="stylesheet">
+<!--add better-simple-slideshow-->
+<link rel="stylesheet" href="../../css/simple-slideshow-styles.css">
+</head>
+<body>
+<div id="background-lightyellow"> background </div>
+<div class="page">
+  <div class="example-page">
+    <div class="sidebar"> <a href="../about.html" id="logo"><img src="../../images/logo.png" alt="logo"></a>
+      <ul>
+        <li class="home"> <a href="../../index.html">Home</a> </li>
+        <li class="start"> <a href="../start.html">Start</a> </li>
+        <li class="selected example"> <a href="../example.html">Example</a> </li>
+        <li class="block"> <a href="../block.html">Block</a> </li>
+        <li class="blog"> <a href="../blog.html">Blog</a> </li>
+      </ul>
+    </div>
+    <div class="body">
+      <button class="btn" onclick="javascript:location.href='../example.html'">Back to the list</button>
+      <header></header>
+      <div class="content-example-detail">
+        <div >
+          <h3>Example: Know the Pleasure of Fish</h3>
+          <br />
+          <br />
+          <br />
+          <hr />
+          <h4>Use two Zenbos to do chinese comic dialogue crosstalk simultaneously！Come to see there interaction！</h4>
+        </div>
+        <div class="figure">
+          <div class="bss-slides num1" tabindex="1" autofocus="autofocus">
+            <figure> <img src="../../images/example/know_the_preasure_of_fish/know_the_preasure_of_fish_slide_2.png" width="100%" />
+              <figcaption>Scenario</figcaption>
+            </figure>
+            <figure> <img src="../../images/example/know_the_preasure_of_fish/know_the_preasure_of_fish_slide_1.png" width="100%" />
+              <figcaption>Editor</figcaption>
+            </figure>
+          </div>
+          <!-- // bss-slides -->
+          
+          <div class="example-detail-buttons">
+          	<a class="content-example-download" href="https://zenboscratch.github.io/examples/-Zenbo-Know_The_Pleasure_Of_Fish.sbx">Download</a> 
+			<a class="content-example-editonline" href="http://scratchx.org/?url=https://zenboscratch.github.io/examples/-Zenbo-Know_The_Pleasure_Of_Fish.sbx" target="browser_tag1">See Inside</a> 
+			<a class="content-example-video" href="https://youtu.be/WlomXcUykkE" data-lity>Video</a> 
+		  </div>
+         
+          <div style="overflow-x:auto;">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Category</th>
+                  <td>Comic dialogue crosstalk</td>
+                </tr>
+                <tr>
+                  <th>Version</th>
+                  <td>v1.0</td>
+                </tr>
+                <tr>
+                  <th>Reference</th>
+                  <td><a>Original</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="footer">
+        <ul>
+          <li> <a href="../about.html">About</a> </li>
+          <li> <a href="../../index.html">Home</a> </li>
+          <li> <a href="../start.html">Start</a> </li>
+          <li> <a href="../example.html">Example</a> </li>
+          <li> <a href="../block.html">Block</a> </li>
+          <li> <a href="../blog.html">Blog</a> </li>
+        </ul>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-middle-email" style="cursor: pointer;" onclick="window.open('mailto:zenbo.scratchservice@gmail.com','_newtab');"> <img src="../../images/footer-email.png" alt=""><a>Email: zenbo.scratchservice@gmail.com</a> </div>
+        <div class="footer-middle-youtube" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/channel/UCpHbyKwWAkbJ2terDCcGbYA','_newtab');"> <img src="../../images/footer-youtube.png" alt=""> <a href="" target="youtube_tag1" id="youtube">Youtube Channel</a> </div>
+      </div>
+      <div class="footer-bottom">
+        <ul>
+          <li> <img src="../../images/footer-earth.png" alt=""><a href="../language.html">English</a> </li>
+        </ul>
+        <ul>
+          <li> <a>&#169; 2017 Zenbo Dev Lab</a> </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!--add lity--> 
+<script src="../../js/jquery.js"></script> 
+<script src="../../js/lity.js"></script> 
+
+<!--add better-simple-slideshow--> 
+<script src="../../js/better-simple-slideshow.min.js"></script> 
+<script>
+	var opts = {
+		auto : {
+			speed : 3500, 
+			pauseOnHover : false
+		},
+		fullScreen : false, 
+		swipe : true
+	};
+	makeBSS('.num1', opts);
+
+	var opts2 = {
+		auto : false,
+		fullScreen : true,
+		swipe : true
+	};
+	makeBSS('.num2', opts2);
+</script>
+</body>
+</html>
