@@ -76,7 +76,7 @@ p a:hover {
 	background: url(../images/bg-lightgreen-absolute.png);
 	height: 100%;
 	margin: 0;
-	position: absolute;
+	position: absolsute;
 	right: 0;
 	text-indent: -99999px;
 	width: 51%;
@@ -353,16 +353,6 @@ p a:hover {
 	font-family: Noto Sans TC, AbelRegular, "微軟正黑體";
 	text-align: center;	
 }
-.body-language .content-language div div p:hover {
-	color: #CFCFCF;
-	font-size: 22px;
-	line-height: 24px;
-	margin: 0 0 22px;
-	padding: 0px 0 0 0px;
-	font-family: Noto Sans TC, AbelRegular, "微軟正黑體";
-	text-align: center;	
-	text-decoration: none;
-}
 .body-language .content-language div div a {
 	color: #CFCFCF;
 	font-size: 27px;
@@ -373,11 +363,6 @@ p a:hover {
 	text-align: center;	
 	text-decoration: none;
 }
-.body-language .content-language div div a:hover {
-	text-decoration: none!important;
-	color: #000000;
-}
-
 
 
 
@@ -1185,16 +1170,10 @@ p a:hover {
 	background-color: none;
 	border-bottom: 2px solid gray;
 }
-.body .content-block div.block {
-	margin: 0px 0px 0px 0px;
-	padding: 10px 0px 0px 0px;
-	width: 95%;
-	background-color: none;
-	border-bottom: 2px solid gray;
-}
 .body .content-block div.block p {
 	font-family: Noto Sans TC, AbelRegular, "微軟正黑體";
 	font-size: 18px;
+	text-indent: 20px;
 }
 .body .content-blog div {
 	background: url(../images/bg-2-column.png) repeat-y scroll 0 0 transparent;

@@ -1170,16 +1170,10 @@ p a:hover {
 	background-color: none;
 	border-bottom: 2px solid gray;
 }
-.body .content-block div.block {
-	margin: 0px 0px 0px 0px;
-	padding: 10px 0px 0px 0px;
-	width: 95%;
-	background-color: none;
-	border-bottom: 2px solid gray;
-}
 .body .content-block div.block p {
 	font-family: Noto Sans TC, AbelRegular, "微軟正黑體";
 	font-size: 18px;
+	text-indent: 20px;
 }
 .body .content-blog div {
 	background: url(../images/bg-2-column.png) repeat-y scroll 0 0 transparent;
