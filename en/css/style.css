@@ -82,6 +82,16 @@ p a:hover {
 	width: 51%;
 	z-index: -1;
 }
+#background-greenlight {
+	background: url(../images/bg-lightgreen-absolute.png);
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	text-indent: -99999px;
+	width: 51%;
+	z-index: -1;
+}
 #background-zenboblue2 {
 	background: url(../images/bg-zenbo_blue-absolute.png);
 	height: 100%;
