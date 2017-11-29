@@ -374,8 +374,6 @@ p a:hover {
 	text-decoration: none;
 }
 
-
-
 .body-language .content-language .language-featured img {
 	display: block;
     margin: auto;
@@ -385,16 +383,6 @@ p a:hover {
 	padding: 20px 0 20px 0;
 	
 }
-
-
-
-
-
-
-
-
-
-
 
 .body .content-about div div {
 	float: left;
@@ -723,15 +711,17 @@ p a:hover {
 }
 .body .content-start div div p {
 	color: #5c3820;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 24px;
-	margin: 0 0 22px;
+	margin: 6px 0 6px 0px;
 	padding: 0 0 0 1px;
 	font-family: Noto Sans TC, AbelRegular, "微軟正黑體";
 }
 .body .content-start div div p span.highlight-text-bigger {
 	color: #000000;
 	font-size: 22px;
+	padding: 0;
+	margin: 0;
 }
 .body .content-start div div p span.highlight-text-normal {
 	color: #000000;
@@ -739,7 +729,7 @@ p a:hover {
 }
 .body .content-start div div p span.url-text-normal {
 	color: #0061CC;
-	font-size: 18px;
+	font-size: 16px;
 }
 .body .content-start div div.sidebar {
 	background: none;
@@ -892,6 +882,106 @@ p a:hover {
 	position: relative;
 	width: 360px;
 }
+
+.body .content-quick-link table {
+	width: 730px;
+	/*width: 100%;*//*border-width:3px; border-style:solid;*/
+    /*border-collapse: collapse;*/
+}
+.body .content-quick-link table tr {
+	background-color: #f2f2f2;
+	height: 45px;
+	color: black;
+}
+.body .content-quick-link table th {
+	/*background-color: #e2e2e2;*/
+	background-color: #ffffff;
+	color: #7f7f7f;
+	border: 2px solid #fff;
+	border-radius: 15px 15px 15px 15px;
+	width: 80px;
+}
+.body .content-start a.content-quick-link-pro {
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 12, 87, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+}
+.body .content-start a.content-quick-link-pro:hover {
+	filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+	opacity: 0.9;
+	text-decoration: none;
+}
+.body .content-start a.content-quick-link-edu {
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(18, 175, 226, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+}
+.body .content-start a.content-quick-link-edu:hover {
+	filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+	opacity: 0.9;
+	text-decoration: none;
+}
+.body .content-start .button-content-quick-link-pro {
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 12, 87, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline:none
+}
+.body .content-start .button-content-quick-link-pro:hover {
+	filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+	opacity: 0.9;
+	text-decoration: none;
+	border: none;
+	outline:none
+}
+.body .content-start .button-content-quick-link-edu {
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(18, 175, 226, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline:none
+}
+.body .content-start .button-content-quick-link-edu:hover {
+	filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+	opacity: 0.9;
+	text-decoration: none;
+	border: none;
+	outline:none
+}
+
+
+
 .body .content-example div:first-child {
 	padding-bottom: 0;
 }
@@ -1498,6 +1588,49 @@ p a:hover {
 	color: #FE3E42;
 	font-weight: bold;
 }
+
+.body .content-block div a.content-block-version {
+	width: 388px;
+	display: inline-block;
+	text-decoration: none;
+	color: #00468E;
+
+	/*background: rgba(18, 175, 226, .8);*/
+	background: white;
+	font-size: 24px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+	padding: 10px 0 0 10px;
+}
+
+.body .content-block div.content-block-version-div  {
+	background: transparent;
+	margin: 0 0 0 18px;
+	padding: 0 0 0 0px;
+}
+
+.body .content-block div a.content-block-version-unselect {
+	width: 390px;
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	background: #E0E0E0;
+	font-size: 24px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+	padding: 10px 0 0 10px;
+}
+.body .content-block div a.content-block-version-unselect:hover {
+	filter: alpha(opacity=90);/* Needed for IE8 and old versions */
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+
+
+
 /*------------------------- Footer ------------------------*/
 .footer {
 	height: 35px;
