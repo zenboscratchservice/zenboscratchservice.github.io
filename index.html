@@ -101,13 +101,18 @@ ga('send', 'pageview');
 			console.log('/en-US' + window.location.pathname);
 				//alert("en-us");
 				//window.location.href = '/en-US' + window.location.pathname;
-				window.location.href = 'en/index.html';
+				
+				// temperory direct to tw
+				//window.location.href = 'en/index.html';
+				window.location.href = 'tw/index.html';
 			return true;
 			break;
 
 		  default:
 				console.log('default:');
-				window.location.href = 'en/index.html';
+				// temperory direct to tw
+				//window.location.href = 'en/index.html';
+				window.location.href = 'tw/index.html';
 		}
 		console.log('error:');
 		return false;
@@ -133,6 +138,10 @@ ga('send', 'pageview');
 		  console.log('not found:');
 		  //window.location.href = '/en-US' + window.location.pathname;
 		  window.location.href = 'en/index.html';
+		  
+		  // temperory direct to tw
+				//window.location.href = 'en/index.html';
+				window.location.href = 'tw/index.html';
 	  }
 	} catch (e) {
 		console.log('exception');
@@ -155,8 +164,9 @@ ga('send', 'pageview');
 	<div class="footer">
 	
 		<div class="footer-sub">
-
-				<a href="tw/index.html">中文版</a> | <a href="en/index.html">ENGLISH</a>
+			<!--temperory direct to tw-->
+			<!--<a href="tw/index.html">中文版</a> | <a href="en/index.html">ENGLISH</a>-->
+				<a href="tw/index.html">中文版</a> 
 
 		</div>
 	</div>
