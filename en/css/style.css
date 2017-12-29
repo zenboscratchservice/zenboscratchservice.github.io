@@ -1081,6 +1081,25 @@ p a:hover {
 	border: none;
 	outline:none
 }
+.body .content-start .button-content-quick-link-pro:active {
+	
+	position: relative;
+	top: 1px;
+	
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(153, 26, 70, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline:none
+}
 .body .content-start .button-content-quick-link-edu {
 	width: 140px;
 	display: inline-block;
@@ -1103,6 +1122,26 @@ p a:hover {
 	border: none;
 	outline:none
 }
+.body .content-start .button-content-quick-link-edu:active {
+	position: relative;
+	top: 1px;
+	
+	
+	width: 140px;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(12, 109, 140, .8);
+	font-size: 16px;
+	line-height: 33px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline:none
+}
+
 
 
 .body .content-example div {
