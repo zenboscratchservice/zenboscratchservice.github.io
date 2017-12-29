@@ -1066,6 +1066,7 @@ p a:hover {
 	color: #fff;
 	background: rgba(255, 12, 87, .8);
 	font-family: Arial, "微軟正黑體";
+	font-weight: bold;
 	font-size: 16px;
 	line-height: 33px;
 	text-align: center;
@@ -1093,6 +1094,7 @@ p a:hover {
 	color: #fff;
 	background: rgba(153, 26, 70, .8);
 	font-family: Arial, "微軟正黑體";
+	font-weight: bold;
 	font-size: 16px;
 	line-height: 33px;
 	text-align: center;
@@ -1109,6 +1111,7 @@ p a:hover {
 	color: #fff;
 	background: rgba(18, 175, 226, .8);
 	font-family: Arial, "微軟正黑體";
+	font-weight: bold;
 	font-size: 16px;
 	line-height: 33px;
 	text-align: center;
@@ -1136,6 +1139,7 @@ p a:hover {
 	color: #fff;
 	background: rgba(12, 109, 140, .8);
 	font-family: Arial, "微軟正黑體";
+	font-weight: bold;
 	font-size: 16px;
 	line-height: 33px;
 	text-align: center;
