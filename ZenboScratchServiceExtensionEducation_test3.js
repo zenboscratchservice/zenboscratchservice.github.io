@@ -476,7 +476,7 @@
         console.log(ip);
         console.log(p1);
         $.ajax({
-            url: 'http://' + ip + port + '/?extension=education' + '&name=Facial' + '&p1=' + p1,
+            url: ip + port + '/?extension=education' + '&name=Facial' + '&p1=' + p1,
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
