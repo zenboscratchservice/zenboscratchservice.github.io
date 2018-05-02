@@ -92,7 +92,7 @@
          }
    
         $.ajax({
-            url: ip + port + '/?extension=education' + '&name=Add_and_update_sentence' + '&p1=' + 'IP' + '&p2=' + 'switch' + '/',
+            url: '//' + ip + port + '/?extension=education' + '&name=Add_and_update_sentence' + '&p1=' + 'IP' + '&p2=' + 'switch',
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
@@ -103,7 +103,7 @@
              			 flagArray.data[flagIndex_init].recursionFlag = false;
 
     			    $.ajax({
-          			url: ip + port + '/?extension=education' + '&name=Add_and_update_sentence' + '&p1=' + 'test' + '&p2=' + 'zenbo' + '/',
+          			url: '//' + ip + port + '/?extension=education' + '&name=Add_and_update_sentence' + '&p1=' + 'test' + '&p2=' + 'zenbo',
         			dataType: 'text',
            			crossDomain: true,
            			success: function (data) {
@@ -476,7 +476,7 @@
         console.log(ip);
         console.log(p1);
         $.ajax({
-            url: ip + port + '/?extension=education' + '&name=Facial' + '&p1=' + p1,
+            url: '//' + ip + port + '/?extension=education' + '&name=Facial' + '&p1=' + p1,
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
