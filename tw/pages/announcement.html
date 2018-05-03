@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zenbo Scratch - 關於我們</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<!--add lity-->
+<link href="../css/lity.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script>
+//圖片縮圖
+$(window).load(function(){
+$("img").each(function(i){
+if($(this).attr("alumb")=="true"){
+//移除目前設定的影像長寬
+$(this).removeAttr('width');
+$(this).removeAttr('height');
+
+//取得影像實際的長寬
+var imgW = $(this).width();
+var imgH = $(this).height();
+
+//計算縮放比例
+var w=$(this).attr("_w")/imgW;
+var h=$(this).attr("_h")/imgH;
+var pre=1;
+if(w>h){
+pre=h;
+}else{
+pre=w;
+}
+
+//設定目前的縮放比例
+$(this).width(imgW*pre);
+$(this).height(imgH*pre);
+}
+});
+});
+</script>
+
+</head>
+<body>
+<div id="background-zenbobluegreen"> background </div>
+<div class="page">
+  <div class="about-page">
+    <div class="sidebar"> <a id="logo"><img src="../images/logo.png" alt="logo"></a>
+      <ul>
+        <li class="home"> <a href="../index.html">首頁</a> </li>
+        <li class="start"> <a href="start.html">開始使用</a> </li>
+        <li class="example"> <a href="example_pro.html">專業版範例</a> </li>
+        <li class="example"> <a href="example_edu.html">教育版範例</a> </li>
+        <li class="block"> <a href="block_pro.html">專業版積木</a> </li>
+        <li class="block"> <a href="block_edu.html">教育版積木</a> </li>
+        <li class="blog"> <a href="blog.html">部落格</a> </li>
+        <li class="about"> <a href="about.html">關於</a> </li>  
+      </ul>
+    </div>
+    <div class="body">
+      <div class="content-about">
+        <div>
+          <h3>公告 Announcemnet</h3>
+        </div>
+        <div class="featured"> <img src="../images/pic-title-about.jpg" alt=""> </div>
+        <div>
+          <div>
+           	<h1>2018/5/3</h1>
+            <h1>瀏覽器更新後，任何積木指令操作 Zenbo 都無反應</h1>
+            
+                <!-- space -->
+            	<span style="display:inline-block; height: 10px"></span><p></p>	
+            
+            <p> 此原因為瀏覽器安全規定的改變，造成指令無法送出。 Zenbo Scrtch 團隊正在全力解決這個問題，在完全解決釋出新版APP之前，請參考以下步驟暫時處理步驟︰</p>
+               
+            	
+            <h1> Chrome </h1>
+            <p> 1. 任意執行一個積木後，注意瀏覽器網址列最右邊會出現一個盾牌圖示，如下圖︰</p>
+            
+            <p> 
+            <a class="example-image-link" href="../images/announce/18050_security/chrome_01.png" data-lity> 
+            	<img src="../images/announce/18050_security/chrome_01.png" alumb="true" _w="720"/>
+            </a>
+            </p>
+            
+            <p> 2. 點選符號後，出現對話框如下圖，請點選"載入不安全的指令碼"︰</p>
+            
+            <p> 
+            <a class="example-image-link" href="../images/announce/18050_security/chrome_02.png" data-lity> 
+            	<img src="../images/announce/18050_security/chrome_02.png" alumb="true" _w="720"/>
+            </a>
+            </p>            
+            
+            <p> 3. 網頁會重新讀取，完成後即可如同往常操作Scratch了！</p>
+            
+             
+                <!-- space -->
+            	<span style="display:inline-block; height: 10px"></span><p></p>	
+             
+            
+            <h1> Firefox </h1>
+            <p> 1. 任意執行一個積木後，注意瀏覽器網址列左邊的一排圖示中的驚嘆號圖示，如下圖︰</p>
+            
+            <p> 
+            <a class="example-image-link" href="../images/announce/18050_security/firefox_01.png" data-lity> 
+            	<img src="../images/announce/18050_security/firefox_01.png" alumb="true" _w="720"/>
+            </a>
+            </p>
+            
+            <p> 2. 點選符號後，出現對話框如下圖，請點選右邊的箭頭再打開更多資訊︰</p>
+            
+            <p> 
+            <a class="example-image-link" href="../images/announce/18050_security/firefox_02.png" data-lity> 
+            	<img src="../images/announce/18050_security/firefox_02.png" alumb="true" _w="720"/>
+            </a>
+            </p>            
+            
+            <p> 3. 在出現對話框如下圖，請點選按鈕"暫時停止保護"︰</p>
+            
+            <p> 
+            <a class="example-image-link" href="../images/announce/18050_security/firefox_03.png" data-lity> 
+            	<img src="../images/announce/18050_security/firefox_03.png" alumb="true" _w="720"/>
+            </a>
+            </p>  
+            
+                       
+            <p> 4. 網頁會重新讀取，完成後即可如同往常操作Scratch了！</p>
+                                
+                 <!-- space -->
+            	<span style="display:inline-block; height: 10px"></span><p></p>	                                                       
+            
+            <p> </p>
+			  
+          </div>
+        </div>
+      </div>
+      <!--.content-start-->
+      
+      <div class="footer"> 
+        <ul>
+          <li> <a href="../index.html">首頁</a> </li>
+          <li> <a href="start.html">開始使用</a> </li>
+          <li> <a href="example_pro.html">範例</a> </li>
+          <li> <a href="block_pro.html">積木</a> </li>
+          <li> <a href="blog.html">部落格</a> </li>
+          <li> <a href="about.html">關於</a> </li>
+        </ul>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-middle-email" style="cursor: pointer;" onclick="window.open('mailto:zenbo.scratchservice@gmail.com','_newtab');"> <img src="../images/footer-email.png" alt=""><a>聯絡我們: zenbo.scratchservice@gmail.com</a> </div>
+        <div class="footer-middle-youtube" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/channel/UCpHbyKwWAkbJ2terDCcGbYA','_newtab');"> <img src="../images/footer-youtube.png" alt=""> <a href="" target="youtube_tag1" id="youtube_id2">Youtube 頻道</a> </div>
+      </div>
+      <div class="footer-bottom">
+        <ul>
+          <li> <img src="../images/footer-earth.png" alt=""><a href="language.html">繁體中文</a> </li>
+        </ul>
+        <ul>
+          <li> <a>&#169; 2017-2018 Zenbo Dev Lab</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--add lity--> 
+<script src="../js/jquery.js"></script> 
+<script src="../js/lity.js"></script>
+</body>
+</html>
