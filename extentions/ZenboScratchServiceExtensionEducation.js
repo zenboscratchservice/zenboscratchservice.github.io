@@ -1564,7 +1564,7 @@ function showAlertMessage()
         console.log(p1);
         console.log(p2);
         $.ajax({
-            url: 'http://' + ip + port + '/?extension=advance' + '&name=recordAudio' + '&p1=' + p1 + '&p2=' + p2,
+            url: 'http://' + ip + port + '/?extension=education' + '&name=recordAudio' + '&p1=' + p1 + '&p2=' + p2,
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
@@ -1597,7 +1597,77 @@ function showAlertMessage()
         console.log(p2);
         console.log(p3);
         $.ajax({
-            url: 'http://' + ip + port + '/?extension=advance' + '&name=recordVideo' + '&p1=' + p1 + '&p2=' + p2 + '&p3=' + p3 ,
+            url: 'http://' + ip + port + '/?extension=education' + '&name=recordVideo' + '&p1=' + p1 + '&p2=' + p2 + '&p3=' + p3 ,
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+
+                if (data == 'Must set Zenbo IP')
+                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
+            }
+        });
+    };
+
+   ext.startWheelLight = function (p1, p2, p3, p4) {
+        //startWheelLight: 'start Wheel light with %m.wheelLightLights wheel, color %m.startWheelLightColor and effect %m.startWheelLightEffect',
+		var color = ["00ffffff"/* 白 */, "00ff0000"/* 紅 */, "ee4e00"/* 橙 */, "00ffff00"/* 黃 */, "0000ff00"/* 綠 */, "000000ff"/* 藍 */, "4b0082"/* 靛 */, "8A2BE2"/* 紫 */, "ff447a"/* 粉紅 */];
+        
+	    for(var i = 0; i < translate.wheelLightLights.length; i++){
+            if ( p1 == translate.wheelLightLights[i]) {                                         
+		         p1 = TRANSLATIONS.us.wheelLightLights[i];
+            }   
+        }
+	    for(var i = 0; i < translate.wheelLightSpeed.length; i++){
+            if ( p2 == translate.wheelLightSpeed[i]) {                                         
+		         p2 = TRANSLATIONS.us.wheelLightSpeed[i];
+            }   
+        }
+	    for(var i = 0; i < translate.startWheelLightColor.length; i++){
+            if ( p3 == translate.startWheelLightColor[i]) {
+                p3 = color[i];
+            }
+        }
+	    for(var i = 0; i < translate.startWheelLightEffect.length; i++){
+            if ( p4 == translate.startWheelLightEffect[i]) {                                         
+		        p4 = TRANSLATIONS.us.startWheelLightEffect[i];
+            }   
+        }
+		
+        console.log("startWheelLight - " + "ip:" +ip+ " p1:"+p1+ " p2:"+p2 + " p3:" + p3 + " p4:" + p4);
+        $.ajax({
+            url: 'http://' + ip + port + '/?extension=education' + '&name=startWheelLight' + '&p1=' + p1 + '&p2=' + p2 + '&p3=' + p3 + '&p4=' + p4 ,
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+
+                if (data == 'Must set Zenbo IP')
+                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
+            }
+        });
+    };
+
+   ext.stopWheelLight = function (p1) {
+	    for(var i = 0; i < translate.wheelLightLights.length; i++){
+            if ( p1 == translate.wheelLightLights[i]) {                                         
+		         p1 = TRANSLATIONS.us.wheelLightLights[i];
+            }   
+        }
+		
+        console.log("stopWheelLight - " + "ip:" +ip+ " p1:"+p1);
+        $.ajax({
+            url: 'http://' + ip + port + '/?extension=education' + '&name=stopWheelLight' + '&p1=' + p1 ,
             dataType: 'text',
             crossDomain: true,
             success: function (data) {
@@ -1627,27 +1697,29 @@ function showAlertMessage()
             Facial: 'make the %m.facial_type expression', 
             hideFace: 'hide the expression',
             TTS: 'speak:  %m.tts_type ',
-	    TTS_editor: 'speak:  %s',
-	    Adjust_stream_volume: 'make %m.volume_option_type volume %m.volume_type',
-	    Adjust_tts_and_speed: 'speak:  %s by %m.tts_speed_type speed',
-	    Add_and_update_sentence: 'Zenbo is ready to listen %m.sentence_type which is %s',
-	    Speak_and_listen: 'Zenbo would start listening',
-	    when_listen_and_run: 'when Zenbo heard %m.second_sentence_type',
-	    Delete_instance: 'delete all sentences',
-	    Add_and_update_sentence_number: 'Zenbo is ready to listen to numbers',
-	    when_listen_number_and_run: 'when Zenbo heard numbers',
-	    getIndex: 'current number heard by Zenbo',
-	    playVideosInYoutube: ' %m.playVideosInYoutubeItems playing a Youtube URL: %s',
-	    playUrlMusic: ' %m.playUrlMusicItems playing an online audio file: %s',
-	    displayUrlPictures: ' %m.displayUrlPicturesItems browsing an online image file: %s',
-	    openDriveVideoUrl: ' %m.openDriveVideoUrlItems playing a Google Drive video shareable link: %s',
-	    openDriveAudioUrl: ' %m.openDriveAudioUrlItems playing Google Drive audio shareable link: %s',
-	    openDrivePictureUrl: ' %m.openDrivePictureUrlItems browsing a Google Drive image shareable link: %s',
-        openDriveDocumentUrl: ' %m.openDriveDocumentUrlItems browsing a Google Drive document shareable link: %s',
-		when_touch_head_and_run: 'when the head of Zenbo is touched',
-		recordAudio: ' %m.recordAudioItems audio recording, file name: %s',
-		recordVideo: ' %m.recordVideoItems %m.recordVideoSizes video recording, file name: %s',
-	    head_direction: ["left", "right", "top", "bottom"],
+	        TTS_editor: 'speak:  %s',
+	        Adjust_stream_volume: 'make %m.volume_option_type volume %m.volume_type',
+	        Adjust_tts_and_speed: 'speak:  %s by %m.tts_speed_type speed',
+	        Add_and_update_sentence: 'Zenbo is ready to listen %m.sentence_type which is %s',
+	        Speak_and_listen: 'Zenbo would start listening',
+	        when_listen_and_run: 'when Zenbo heard %m.second_sentence_type',
+	        Delete_instance: 'delete all sentences',
+	        Add_and_update_sentence_number: 'Zenbo is ready to listen to numbers',
+	        when_listen_number_and_run: 'when Zenbo heard numbers',
+	        getIndex: 'current number heard by Zenbo',
+	        playVideosInYoutube: ' %m.playVideosInYoutubeItems playing a Youtube URL: %s',
+	        playUrlMusic: ' %m.playUrlMusicItems playing an online audio file: %s',
+	        displayUrlPictures: ' %m.displayUrlPicturesItems browsing an online image file: %s',
+	        openDriveVideoUrl: ' %m.openDriveVideoUrlItems playing a Google Drive video shareable link: %s',
+	        openDriveAudioUrl: ' %m.openDriveAudioUrlItems playing Google Drive audio shareable link: %s',
+	        openDrivePictureUrl: ' %m.openDrivePictureUrlItems browsing a Google Drive image shareable link: %s',
+            openDriveDocumentUrl: ' %m.openDriveDocumentUrlItems browsing a Google Drive document shareable link: %s',
+		    when_touch_head_and_run: 'when the head of Zenbo is touched',
+		    recordAudio: ' %m.recordAudioItems audio recording, file name: %s',
+		    recordVideo: ' %m.recordVideoItems %m.recordVideoSizes video recording, file name: %s',
+		    startWheelLight: 'start Wheel light with %m.wheelLightLights wheel %m.wheelLightSpeed color %s and effect %m.startWheelLightEffect',
+		    stopWheelLight: 'stop Wheel light %m.wheelLightLights wheel',
+	        head_direction: ["left", "right", "top", "bottom"],
             head_degree: ["0", "15", "30", "45"],
             move_direction: ["forward", "backward"],
             move_far: ["0.25", "0.50", "0.75", "1.00", "1.25", "1.50", "1.75", "2.00"],
@@ -1683,6 +1755,10 @@ function showAlertMessage()
  			recordAudioItems: ["start", "end"],
 			recordVideoItems: ["start", "end"],
 			recordVideoSizes: ["720P", "480P", "240P"],
+			wheelLightLights: ["both", "left", "right"],
+            wheelLightSpeed: ["slowest", "slow", "normal", "fast", "fastest"],
+			startWheelLightColor: ["white", "red", "orange", "yelllow", "green", "blue", "indigo", "purple", "pink"],
+			startWheelLightEffect: ["static", "blinking", "breathing", "forward marquee", "backward marquee"],
 			stop_sending_commands_to_target: 'disconnect Zenbo',
 			pleaseSetupZenboIP: 'Please setup Zenbo IP!',
 			checkBoxMessage   : 'never prompt again',
@@ -1700,27 +1776,29 @@ function showAlertMessage()
             Facial: '做出表情 %m.facial_type', 
             hideFace: '隱藏表情',
             TTS: '說話 %m.tts_type',
-	    TTS_editor: '說話 %s',
-	    Adjust_stream_volume: '調整 %m.volume_option_type 音量 %m.volume_type',
-	    Adjust_tts_and_speed: '說話 %s 速度 %m.tts_speed_type',
-	    Add_and_update_sentence: '準備要聽 %m.sentence_type 是 %s',
-	    Speak_and_listen: 'Zenbo 要開始聽',
-	    when_listen_and_run: '當 Zenbo  聽到 %m.second_sentence_type',
-	    Delete_instance: '刪除全部語句',
-	    Add_and_update_sentence_number: '準備要聽數字',
-	    when_listen_number_and_run: '當我聽到數字',
-	    getIndex: '目前聽到的數字 ',
-	    playVideosInYoutube: ' %m.playVideosInYoutubeItems 播放 Youtube 網址: %s',
-	    playUrlMusic: ' %m.playUrlMusicItems 播放線上音樂: %s',
-	    displayUrlPictures: ' %m.displayUrlPicturesItems 瀏覽線上圖片: %s',
-	    openDriveVideoUrl: ' %m.openDriveVideoUrlItems 播放 Google Drive 影片: %s',
-	    openDriveAudioUrl: ' %m.openDriveAudioUrlItems 播放 Google Drive 音樂: %s',
-	    openDrivePictureUrl: ' %m.openDrivePictureUrlItems 瀏覽 Google Drive 圖片: %s',
+    	    TTS_editor: '說話 %s',
+    	    Adjust_stream_volume: '調整 %m.volume_option_type 音量 %m.volume_type',
+    	    Adjust_tts_and_speed: '說話 %s 速度 %m.tts_speed_type',
+    	    Add_and_update_sentence: '準備要聽 %m.sentence_type 是 %s',
+    	    Speak_and_listen: 'Zenbo 要開始聽',
+    	    when_listen_and_run: '當 Zenbo  聽到 %m.second_sentence_type',
+    	    Delete_instance: '刪除全部語句',
+    	    Add_and_update_sentence_number: '準備要聽數字',
+    	    when_listen_number_and_run: '當我聽到數字',
+    	    getIndex: '目前聽到的數字 ',
+    	    playVideosInYoutube: ' %m.playVideosInYoutubeItems 播放 Youtube 網址: %s',
+    	    playUrlMusic: ' %m.playUrlMusicItems 播放線上音樂: %s',
+    	    displayUrlPictures: ' %m.displayUrlPicturesItems 瀏覽線上圖片: %s',
+    	    openDriveVideoUrl: ' %m.openDriveVideoUrlItems 播放 Google Drive 影片: %s',
+    	    openDriveAudioUrl: ' %m.openDriveAudioUrlItems 播放 Google Drive 音樂: %s',
+    	    openDrivePictureUrl: ' %m.openDrivePictureUrlItems 瀏覽 Google Drive 圖片: %s',
             openDriveDocumentUrl: ' %m.openDriveDocumentUrlItems 瀏覽 Google Drive 文件: %s',
-		when_touch_head_and_run: '當摸到 Zenbo 的頭',
-		recordAudio: ' %m.recordAudioItems 錄音, 檔名: %s',
-		recordVideo: ' %m.recordVideoItems %m.recordVideoSizes 錄影, 檔名: %s',
-	    head_direction: ["左", "右", "上", "下"],
+    		when_touch_head_and_run: '當摸到 Zenbo 的頭',
+    		recordAudio: ' %m.recordAudioItems 錄音, 檔名: %s',
+    		recordVideo: ' %m.recordVideoItems %m.recordVideoSizes 錄影, 檔名: %s',
+	        startWheelLight: '開始燈光 %m.wheelLightLights 輪 %m.wheelLightSpeed %m.startWheelLightColor 色 %m.startWheelLightEffect 效果',
+		    stopWheelLight: '停止燈光效果 %m.wheelLightLights 輪',
+    	    head_direction: ["左", "右", "上", "下"],
             head_degree: ["0", "15", "30", "45"],
             move_direction: ["前進", "後退"],
             move_far: ["0.25", "0.50", "0.75", "1.00", "1.25", "1.50", "1.75", "2.00"],
@@ -1753,8 +1831,12 @@ function showAlertMessage()
  			recordAudioItems: ["開始", "關閉"],
 			recordVideoItems: ["開始", "關閉"],
 			recordVideoSizes: ["720P", "480P", "240P"],
+			wheelLightLights: ["雙", "左", "右"],
+			wheelLightSpeed: ["最慢", "慢", "正常", "快", "最快"],
+			startWheelLightColor: ["白", "紅", "橙", "黃", "綠", "藍", "靛", "紫", "粉紅"],
+			startWheelLightEffect: ["恆亮", "閃爍", "呼吸", "前轉跑馬燈", "後轉跑馬燈"],
 			stop_sending_commands_to_target: '斷線',
-		    	pleaseSetupZenboIP: '請先設置 Zenbo IP！',
+		    pleaseSetupZenboIP: '請先設置 Zenbo IP！',
 			checkBoxMessage   : '永遠不再提示',
 			alertButtonText   : '確定',
         },  		
@@ -1822,6 +1904,8 @@ function showAlertMessage()
 			['', translate.stop_sending_commands_to_target, 'stop_sending_commands_to_target'],
 			['', translate.recordAudio, 'recordAudio', translate.recordAudioItems[0], 'testAudio'],
             ['', translate.recordVideo, 'recordVideo', translate.recordVideoItems[0], translate.recordVideoSizes[0], 'testVideo'],  
+            ['', translate.startWheelLight, 'startWheelLight', translate.wheelLightLights[0], translate.wheelLightSpeed[2], translate.startWheelLightColor[5], translate.startWheelLightEffect[3]],  
+            ['', translate.stopWheelLight, 'stopWheelLight', translate.wheelLightLights[0]],  
         ],
         menus: {
             "head_direction": translate.head_direction,
@@ -1851,6 +1935,10 @@ function showAlertMessage()
 			"recordAudioItems": translate.recordAudioItems,
 			"recordVideoItems": translate.recordVideoItems,
 			"recordVideoSizes": translate.recordVideoSizes,		
+			"wheelLightLights": translate.wheelLightLights,
+			"wheelLightSpeed": translate.wheelLightSpeed,
+			"startWheelLightColor": translate.startWheelLightColor,
+			"startWheelLightEffect": translate.startWheelLightEffect,		
         },
         url: 'https://zenboscratchservice.github.io/' // Link to extension documentation, homepage, etc.
     };

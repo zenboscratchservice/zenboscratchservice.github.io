@@ -1541,76 +1541,6 @@ ext.Add_and_update_sentence_number = function (ip) {
         });
     };
 
-   ext.startWheelLight = function (ip, p1, p2, p3, p4) {
-        //startWheelLight: 'start Wheel light with %m.wheelLightLights wheel, color %m.startWheelLightColor and effect %m.startWheelLightEffect',
-		var color = ["00ffffff"/* 白 */, "00ff0000"/* 紅 */, "ee4e00"/* 橙 */, "00ffff00"/* 黃 */, "0000ff00"/* 綠 */, "000000ff"/* 藍 */, "4b0082"/* 靛 */, "8A2BE2"/* 紫 */, "ff447a"/* 粉紅 */];
-        
-	    for(var i = 0; i < translate.wheelLightLights.length; i++){
-            if ( p1 == translate.wheelLightLights[i]) {                                         
-		         p1 = TRANSLATIONS.us.wheelLightLights[i];
-            }   
-        }
-	    for(var i = 0; i < translate.wheelLightSpeed.length; i++){
-            if ( p2 == translate.wheelLightSpeed[i]) {                                         
-		         p2 = TRANSLATIONS.us.wheelLightSpeed[i];
-            }   
-        }
-	    for(var i = 0; i < translate.startWheelLightColor.length; i++){
-            if ( p3 == translate.startWheelLightColor[i]) {
-                p3 = color[i];
-            }
-        }
-	    for(var i = 0; i < translate.startWheelLightEffect.length; i++){
-            if ( p4 == translate.startWheelLightEffect[i]) {                                         
-		        p4 = TRANSLATIONS.us.startWheelLightEffect[i];
-            }   
-        }
-		
-        console.log("startWheelLight - " + "ip:" +ip+ " p1:"+p1+ " p2:"+p2 + " p3:" + p3 + " p4:" + p4);
-        $.ajax({
-            url: 'http://' + ip + port + '/?extension=advance' + '&name=startWheelLight' + '&p1=' + p1 + '&p2=' + p2 + '&p3=' + p3 + '&p4=' + p4 ,
-            dataType: 'text',
-            crossDomain: true,
-            success: function (data) {
-                console.log("success handler");
-
-                if (data == 'Must set Zenbo IP')
-                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
-
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log("error handler");
-                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
-            }
-        });
-    };
-
-   ext.stopWheelLight = function (ip, p1) {
-	    for(var i = 0; i < translate.wheelLightLights.length; i++){
-            if ( p1 == translate.wheelLightLights[i]) {                                         
-		         p1 = TRANSLATIONS.us.wheelLightLights[i];
-            }   
-        }
-		
-        console.log("stopWheelLight - " + "ip:" +ip+ " p1:"+p1);
-        $.ajax({
-            url: 'http://' + ip + port + '/?extension=advance' + '&name=stopWheelLight' + '&p1=' + p1 ,
-            dataType: 'text',
-            crossDomain: true,
-            success: function (data) {
-                console.log("success handler");
-
-                if (data == 'Must set Zenbo IP')
-                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
-
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log("error handler");
-                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
-            }
-        });
-    };
-
     var TRANSLATIONS = {
         us: {
             Setting_targetIP: 'setup Zenbo IP: %s',
@@ -1644,8 +1574,6 @@ ext.Add_and_update_sentence_number = function (ip) {
 	when_touch_head_and_run: 'when the head of IP %s is touched',
 		recordAudio: 'IP %s %m.recordAudioItems audio recording, file name: %s',
 		recordVideo: 'IP %s %m.recordVideoItems %m.recordVideoSizes video recording, file name: %s',
-		    startWheelLight: 'IP %s start Wheel light with %m.wheelLightLights wheel %m.wheelLightSpeed color %s and effect %m.startWheelLightEffect',
-		    stopWheelLight: 'IP %s stop Wheel light %m.wheelLightLights wheel',
 	    head_direction: ["left", "right", "top", "bottom"],
             head_degree: ["0", "15", "30", "45"],
             move_direction: ["forward", "backward"],
@@ -1682,10 +1610,6 @@ ext.Add_and_update_sentence_number = function (ip) {
  			recordAudioItems: ["start", "end"],
 			recordVideoItems: ["start", "end"],
 			recordVideoSizes: ["720P", "480P", "240P"],
-			wheelLightLights: ["both", "left", "right"],
-            wheelLightSpeed: ["slowest", "slow", "normal", "fast", "fastest"],
-			startWheelLightColor: ["white", "red", "orange", "yelllow", "green", "blue", "indigo", "purple", "pink"],
-			startWheelLightEffect: ["static", "blinking", "breathing", "forward marquee", "backward marquee"],
 			pleaseSetupZenboIP: 'Please setup Zenbo IP!',
 			checkBoxMessage   : 'never prompt again',
 			alertButtonText   : 'OK',
@@ -1722,8 +1646,6 @@ ext.Add_and_update_sentence_number = function (ip) {
 		when_touch_head_and_run: '當摸到 IP %s 的頭',
 		recordAudio: 'IP %s %m.recordAudioItems 錄音, 檔名: %s',
 		recordVideo: 'IP %s %m.recordVideoItems %m.recordVideoSizes 錄影, 檔名: %s',
-	        startWheelLight: 'IP %s 開始燈光 %m.wheelLightLights 輪 %m.wheelLightSpeed %m.startWheelLightColor 色 %m.startWheelLightEffect 效果',
-		    stopWheelLight: 'IP %s 停止燈光效果 %m.wheelLightLights 輪',
 	    head_direction: ["左", "右", "上", "下"],
             head_degree: ["0", "15", "30", "45"],
             move_direction: ["前進", "後退"],
@@ -1757,10 +1679,6 @@ ext.Add_and_update_sentence_number = function (ip) {
  			recordAudioItems: ["開始", "關閉"],
 			recordVideoItems: ["開始", "關閉"],
 			recordVideoSizes: ["720P", "480P", "240P"],
-			wheelLightLights: ["雙", "左", "右"],
-			wheelLightSpeed: ["最慢", "慢", "正常", "快", "最快"],
-			startWheelLightColor: ["白", "紅", "橙", "黃", "綠", "藍", "靛", "紫", "粉紅"],
-			startWheelLightEffect: ["恆亮", "閃爍", "呼吸", "前轉跑馬燈", "後轉跑馬燈"],
 			pleaseSetupZenboIP: '請先設置 Zenbo IP！',
 			checkBoxMessage   : '永遠不再提示',
 			alertButtonText   : '確定',
@@ -1828,8 +1746,6 @@ ext.Add_and_update_sentence_number = function (ip) {
 			['h', translate.when_touch_head_and_run, 'when_touch_head_and_run', "192.168.0.1"],
 			['', translate.recordAudio, 'recordAudio', "192.168.0.1", translate.recordAudioItems[0], 'testAudio'],
             ['', translate.recordVideo, 'recordVideo', "192.168.0.1", translate.recordVideoItems[0], translate.recordVideoSizes[0], 'testVideo'],  
-            ['', translate.startWheelLight, 'startWheelLight', "192.168.0.1", translate.wheelLightLights[0], translate.wheelLightSpeed[2], translate.startWheelLightColor[5], translate.startWheelLightEffect[3]],  
-            ['', translate.stopWheelLight, 'stopWheelLight', "192.168.0.1", translate.wheelLightLights[0]],  
         ],
         menus: {
             "head_direction": translate.head_direction,
@@ -1859,10 +1775,6 @@ ext.Add_and_update_sentence_number = function (ip) {
 			"recordAudioItems": translate.recordAudioItems,
 			"recordVideoItems": translate.recordVideoItems,
 			"recordVideoSizes": translate.recordVideoSizes,		
-			"wheelLightLights": translate.wheelLightLights,
-			"wheelLightSpeed": translate.wheelLightSpeed,
-			"startWheelLightColor": translate.startWheelLightColor,
-			"startWheelLightEffect": translate.startWheelLightEffect,		
         },
         url: 'https://zenboscratchservice.github.io/' // Link to extension documentation, homepage, etc.
     };
