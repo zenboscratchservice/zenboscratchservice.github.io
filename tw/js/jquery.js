@@ -37,7 +37,7 @@
 // Pass this if window is not defined yet
 }(typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
 
-// Can't do this because several apps including ASP.NET trace
+// Can"t do this because several apps including ASP.NET trace
 // the stack via arguments.caller.callee and Firefox dies if
 // you try to trace through "use strict" call chains. (#13335)
 // Support: Firefox 18+
@@ -68,7 +68,7 @@
 
     // Define a local copy of jQuery
         jQuery = function( selector, context ) {
-            // The jQuery object is actually just the init constructor 'enhanced'
+            // The jQuery object is actually just the init constructor "enhanced"
             // Need init if jQuery is called (just allow error to be thrown if not included)
             return new jQuery.fn.init( selector, context );
         },
@@ -165,7 +165,7 @@
         },
 
         // For internal use only.
-        // Behaves like an Array's method, not like a jQuery method.
+        // Behaves like an Array"s method, not like a jQuery method.
         push: push,
         sort: deletedIds.sort,
         splice: deletedIds.splice
@@ -211,7 +211,7 @@
                         continue;
                     }
 
-                    // Recurse if we're merging plain objects or arrays
+                    // Recurse if we"re merging plain objects or arrays
                     if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
                         if ( copyIsArray ) {
                             copyIsArray = false;
@@ -224,7 +224,7 @@
                         // Never move original objects, clone them
                         target[ name ] = jQuery.extend( deep, clone, copy );
 
-                        // Don't bring in undefined values
+                        // Don"t bring in undefined values
                     } else if ( copy !== undefined ) {
                         target[ name ] = copy;
                     }
@@ -251,7 +251,7 @@
 
         // See test/unit/core.js for details concerning isFunction.
         // Since version 1.3, DOM methods and functions like alert
-        // aren't supported. They return false on IE (#2968).
+        // aren"t supported. They return false on IE (#2968).
         isFunction: function( obj ) {
             return jQuery.type(obj) === "function";
         },
@@ -286,7 +286,7 @@
 
             // Must be an Object.
             // Because of IE, we also have to check the presence of the constructor property.
-            // Make sure that DOM nodes and window objects don't pass through, as well
+            // Make sure that DOM nodes and window objects don"t pass through, as well
             if ( !obj || jQuery.type(obj) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
                 return false;
             }
@@ -643,7 +643,7 @@
                 push_native = arr.push,
                 push = arr.push,
                 slice = arr.slice,
-            // Use a stripped-down indexOf as it's faster than native
+            // Use a stripped-down indexOf as it"s faster than native
             // http://jsperf.com/thor-indexof-vs-for/5
                 indexOf = function( list, elem ) {
                     var i = 0,
@@ -675,13 +675,13 @@
                         // Operator (capture 2)
                     "*([*^$|!~]?=)" + whitespace +
                         // "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
-                    "*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
+                    "*(?:"((?:\\\\.|[^\\\\"])*)"|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
                     "*\\]",
 
                 pseudos = ":(" + characterEncoding + ")(?:\\((" +
                         // To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
                         // 1. quoted (capture 3; capture 4 or capture 5)
-                    "('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
+                    "("((?:\\\\.|[^\\\\"])*)"|\"((?:\\\\.|[^\\\\\"])*)\")|" +
                         // 2. simple (capture 6)
                     "((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
                         // 3. anything else (capture 2)
@@ -695,7 +695,7 @@
                 rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
                 rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
 
-                rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+                rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]"\"]*?)" + whitespace + "*\\]", "g" ),
 
                 rpseudo = new RegExp( pseudos ),
                 ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -725,7 +725,7 @@
                 rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
 
                 rsibling = /[+~]/,
-                rescape = /'|\\/g,
+                rescape = /"|\\/g,
 
             // CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
                 runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
@@ -773,7 +773,7 @@
                     function( target, els ) {
                         var j = target.length,
                             i = 0;
-                        // Can't trust NodeList.length
+                        // Can"t trust NodeList.length
                         while ( (target[j++] = els[i++]) ) {}
                         target.length = j - 1;
                     }
@@ -849,7 +849,7 @@
                         // qSA works strangely on Element-rooted queries
                         // We can work around this by specifying an extra ID on the root
                         // and working up from there (Thanks to Andrew Dupont for the technique)
-                        // IE 8 doesn't work on object elements
+                        // IE 8 doesn"t work on object elements
                         if ( nodeType === 1 && context.nodeName.toLowerCase() !== "object" ) {
                             groups = tokenize( selector );
 
@@ -858,7 +858,7 @@
                             } else {
                                 context.setAttribute( "id", nid );
                             }
-                            nid = "[id='" + nid + "'] ";
+                            nid = "[id="" + nid + ""] ";
 
                             i = groups.length;
                             while ( i-- ) {
@@ -1043,7 +1043,7 @@
              * @returns {Boolean} True iff elem is a non-HTML XML node
              */
             isXML = Sizzle.isXML = function( elem ) {
-                // documentElement is verified for cases where it doesn't yet exist
+                // documentElement is verified for cases where it doesn"t yet exist
                 // (such as loading iframes in IE - #4833)
                 var documentElement = elem && (elem.ownerDocument || elem).documentElement;
                 return documentElement ? documentElement.nodeName !== "HTML" : false;
@@ -1110,7 +1110,7 @@
 
                 // Support: IE<10
                 // Check if getElementById returns elements by name
-                // The broken getElementById methods don't pick up programatically-set names,
+                // The broken getElementById methods don"t pick up programatically-set names,
                 // so use a roundabout getElementsByName test
                 support.getById = assert(function( div ) {
                     docElem.appendChild( div ).id = expando;
@@ -1153,7 +1153,7 @@
                         if ( typeof context.getElementsByTagName !== "undefined" ) {
                             return context.getElementsByTagName( tag );
 
-                            // DocumentFragment nodes don't have gEBTN
+                            // DocumentFragment nodes don"t have gEBTN
                         } else if ( support.qsa ) {
                             return context.querySelectorAll( tag );
                         }
@@ -1206,20 +1206,20 @@
                     // Regex strategy adopted from Diego Perini
                     assert(function( div ) {
                         // Select is set to empty string on purpose
-                        // This is to test IE's treatment of not explicitly
+                        // This is to test IE"s treatment of not explicitly
                         // setting a boolean content attribute,
                         // since its presence should be enough
                         // http://bugs.jquery.com/ticket/12359
-                        docElem.appendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
-                        "<select id='" + expando + "-\f]' msallowcapture=''>" +
-                        "<option selected=''></option></select>";
+                        docElem.appendChild( div ).innerHTML = "<a id="" + expando + ""></a>" +
+                        "<select id="" + expando + "-\f]" msallowcapture="">" +
+                        "<option selected=""></option></select>";
 
                         // Support: IE8, Opera 11-12.16
                         // Nothing should be selected when empty strings follow ^= or $= or *=
                         // The test attribute must be unknown in Opera but "safe" for WinRT
                         // http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
-                        if ( div.querySelectorAll("[msallowcapture^='']").length ) {
-                            rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
+                        if ( div.querySelectorAll("[msallowcapture^=""]").length ) {
+                            rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:""|\"\")" );
                         }
 
                         // Support: IE8
@@ -1280,13 +1280,13 @@
                     docElem.msMatchesSelector) )) ) {
 
                     assert(function( div ) {
-                        // Check to see if it's possible to do matchesSelector
+                        // Check to see if it"s possible to do matchesSelector
                         // on a disconnected node (IE 9)
                         support.disconnectedMatch = matches.call( div, "div" );
 
                         // This should fail with an exception
                         // Gecko does not error, returns false instead
-                        matches.call( div, "[s!='']:x" );
+                        matches.call( div, "[s!=""]:x" );
                         rbuggyMatches.push( "!=", pseudos );
                     });
                 }
@@ -1436,7 +1436,7 @@
                 }
 
                 // Make sure that attribute selectors are quoted
-                expr = expr.replace( rattributeQuotes, "='$1']" );
+                expr = expr.replace( rattributeQuotes, "="$1"]" );
 
                 if ( support.matchesSelector && documentIsHTML &&
                     ( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
@@ -1445,7 +1445,7 @@
                     try {
                         var ret = matches.call( elem, expr );
 
-                        // IE 9's matchesSelector returns false on disconnected nodes
+                        // IE 9"s matchesSelector returns false on disconnected nodes
                         if ( ret || support.disconnectedMatch ||
                                 // As well, disconnected nodes are said to be in a document
                                 // fragment in IE 9
@@ -1473,7 +1473,7 @@
                 }
 
                 var fn = Expr.attrHandle[ name.toLowerCase() ],
-                // Don't get fooled by Object.prototype properties (jQuery #13807)
+                // Don"t get fooled by Object.prototype properties (jQuery #13807)
                     val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
                         fn( elem, name, !documentIsHTML ) :
                         undefined;
@@ -1729,7 +1729,7 @@
                                                     return false;
                                                 }
                                             }
-                                            // Reverse direction for :only-* (if we haven't yet done so)
+                                            // Reverse direction for :only-* (if we haven"t yet done so)
                                             start = dir = type === "only" && !start && "nextSibling";
                                         }
                                         return true;
@@ -1852,7 +1852,7 @@
                             function( elem, context, xml ) {
                                 input[0] = elem;
                                 matcher( input, null, xml, results );
-                                // Don't keep the element (issue #299)
+                                // Don"t keep the element (issue #299)
                                 input[0] = null;
                                 return !results.pop();
                             };
@@ -1872,10 +1872,10 @@
                     }),
 
                     // "Whether an element is represented by a :lang() selector
-                    // is based solely on the element's language value
+                    // is based solely on the element"s language value
                     // being equal to the identifier C,
                     // or beginning with the identifier C immediately followed by "-".
-                    // The matching of C against the element's language value is performed case-insensitively.
+                    // The matching of C against the element"s language value is performed case-insensitively.
                     // The identifier C does not have to be a valid language name."
                     // http://www.w3.org/TR/selectors/#lang-pseudo
                     "lang": markFunction( function( lang ) {
@@ -2061,7 +2061,7 @@
                     // Comma and first run
                     if ( !matched || (match = rcomma.exec( soFar )) ) {
                         if ( match ) {
-                            // Don't consume trailing commas as valid
+                            // Don"t consume trailing commas as valid
                             soFar = soFar.slice( match[0].length ) || soFar;
                         }
                         groups.push( (tokens = []) );
@@ -2100,7 +2100,7 @@
                 }
 
                 // Return the length of the invalid excess
-                // if we're just parsing
+                // if we"re just parsing
                 // Otherwise, throw an error or return tokens
                 return parseOnly ?
                     soFar.length :
@@ -2140,7 +2140,7 @@
                         var oldCache, outerCache,
                             newCache = [ dirruns, doneName ];
 
-                        // We can't set arbitrary data on XML nodes, so they don't benefit from dir caching
+                        // We can"t set arbitrary data on XML nodes, so they don"t benefit from dir caching
                         if ( xml ) {
                             while ( (elem = elem[ dir ]) ) {
                                 if ( elem.nodeType === 1 || checkNonElements ) {
@@ -2162,7 +2162,7 @@
                                         // Reuse newcache so results back-propagate to previous elements
                                         outerCache[ dir ] = newCache;
 
-                                        // A match means we're done; a fail means we have to keep checking
+                                        // A match means we"re done; a fail means we have to keep checking
                                         if ( (newCache[ 2 ] = matcher( elem, context, xml )) ) {
                                             return true;
                                         }
@@ -2498,7 +2498,7 @@
             };
 
             /**
-             * A low-level selection function that works with Sizzle's compiled
+             * A low-level selection function that works with Sizzle"s compiled
              *  selector functions
              * @param {String|Function} selector A selector or a pre-compiled
              *  selector function built with Sizzle.compile
@@ -2582,7 +2582,7 @@
             support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
 
 // Support: Chrome 14-35+
-// Always assume duplicates if they aren't passed to the comparison function
+// Always assume duplicates if they aren"t passed to the comparison function
             support.detectDuplicates = !!hasDuplicate;
 
 // Initialize against the default document

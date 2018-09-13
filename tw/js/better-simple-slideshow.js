@@ -19,7 +19,7 @@ var makeBSS = function (el, options) {
                 this.el = el; // current slideshow container    
                 this.$items = el.querySelectorAll(this.opts.selector); // a collection of all of the slides, caching for performance
                 this.numItems = this.$items.length; // total number of slides
-                this.$items[0].classList.add('bss-show'); // add show class to first figure 
+                this.$items[0].classList.add("bss-show"); // add show class to first figure 
                 this.injectControls(el);
                 this.addEventListeners(el);
                 if (this.opts.auto) {
@@ -43,11 +43,11 @@ var makeBSS = function (el, options) {
                 // remove .show from whichever element currently has it 
                 // http://stackoverflow.com/a/16053538/2006057
                 [].forEach.call(this.$items, function (el) {
-                    el.classList.remove('bss-show');
+                    el.classList.remove("bss-show");
                 });
   
-                // add .show to the one item that's supposed to have it
-                this.$items[this.counter].classList.add('bss-show');
+                // add .show to the one item that"s supposed to have it
+                this.$items[this.counter].classList.add("bss-show");
             },
             injectControls: function (el) {
             // build and inject prev/next controls
@@ -57,12 +57,12 @@ var makeBSS = function (el, options) {
                     docFrag = document.createDocumentFragment();
         
                 // add classes
-                spanPrev.classList.add('bss-prev');
-                spanNext.classList.add('bss-next');
+                spanPrev.classList.add("bss-prev");
+                spanNext.classList.add("bss-next");
         
                 // add contents
-                spanPrev.innerHTML = '&laquo;';
-                spanNext.innerHTML = '&raquo;';
+                spanPrev.innerHTML = "&laquo;";
+                spanNext.innerHTML = "&raquo;";
                 
                 // append elements to fragment, then append fragment to DOM
                 docFrag.appendChild(spanPrev);
@@ -71,11 +71,11 @@ var makeBSS = function (el, options) {
             },
             addEventListeners: function (el) {
                 var that = this;
-                el.querySelector('.bss-next').addEventListener('click', function () {
+                el.querySelector(".bss-next").addEventListener("click", function () {
                     that.showCurrent(1); // increment & show
                 }, false);
             
-                el.querySelector('.bss-prev').addEventListener('click', function () {
+                el.querySelector(".bss-prev").addEventListener("click", function () {
                     that.showCurrent(-1); // decrement & show
                 }, false);
                 
@@ -95,11 +95,11 @@ var makeBSS = function (el, options) {
                     }, speed);
                 
                 if (pauseOnHover) {
-                    el.addEventListener('mouseover', function () {
+                    el.addEventListener("mouseover", function () {
                         clearInterval(interval);
                         interval = null;
                     }, false);
-                    el.addEventListener('mouseout', function () {
+                    el.addEventListener("mouseout", function () {
                         if(!interval) {
                             interval = window.setInterval(function () {
                                 that.showCurrent(1); // increment & show
@@ -113,19 +113,19 @@ var makeBSS = function (el, options) {
                 var that = this,
                 fsControl = document.createElement("span");
                 
-                fsControl.classList.add('bss-fullscreen');
+                fsControl.classList.add("bss-fullscreen");
                 el.appendChild(fsControl);
-                el.querySelector('.bss-fullscreen').addEventListener('click', function () {
+                el.querySelector(".bss-fullscreen").addEventListener("click", function () {
                     that.toggleFullScreen(el);
                 }, false);
             },
             addSwipe: function(el){
                 var that = this,
                     ht = new Hammer(el);
-                ht.on('swiperight', function(e) {
+                ht.on("swiperight", function(e) {
                     that.showCurrent(-1); // decrement & show
                 });
-                ht.on('swipeleft', function(e) {
+                ht.on("swipeleft", function(e) {
                     that.showCurrent(1); // increment & show
                 });
             },
