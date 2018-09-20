@@ -1793,6 +1793,7 @@ ext.Add_and_update_sentence_number = function (ip) {
             headMovement: 'IP %s 轉動頭部 向  %m.headLRDirection %m.headLRDegree 度  %m.headUDDirection %m.headUDDegree 度',
     	    head_direction: ["左", "右", "上", "下"],
             head_degree: ["0", "15", "30", "45"],
+            headUDDegree: ["0", "15", "30", "45"],
             headLRDegree: ["0", "15", "30", "45"],
             head_degree: ["0", "15", "30", "45"],
             move_direction: ["前進", "後退"],
