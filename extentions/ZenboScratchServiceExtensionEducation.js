@@ -446,6 +446,62 @@ function showAlertMessage()
    };  	
 	
 	
+    ext.headMovement = function (p1, p2, p3, p4, callback) {
+        console.log("headMovement");
+		
+	    for(var i = 0; i < translate.headLRDirection.length; i++){
+            if ( p1 == translate.headLRDirection[i]) {                                        
+		        p1 = TRANSLATIONS.us.headLRDirection[i];
+            }   
+        }
+		
+	     for(var j = 0; j < translate.headLRDegree.length; j++){
+            if ( p2 == translate.headLRDegree[j]) {                                         
+		        p2 = TRANSLATIONS.us.headLRDegree[j];
+            }   
+        }	
+		
+	    for(var i = 0; i < translate.headUDDirection.length; i++){
+            if ( p3 == translate.headUDDirection[i]) {                                        
+		        p3 = TRANSLATIONS.us.headUDDirection[i];
+            }   
+        }
+		
+	     for(var j = 0; j < translate.headUDDegree.length; j++){
+            if ( p4 == translate.headUDDegree[j]) {
+                    if (( p3 == TRANSLATIONS.us.headUDDirection[1]) && ( j > 1))
+                        p4 = TRANSLATIONS.us.headUDDegree[1];
+                    else
+		                p4 = TRANSLATIONS.us.headUDDegree[j];
+            }   
+        }	
+		
+        console.log("headMovement");
+        console.log(ip);
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+        console.log(p4);
+        $.ajax({
+            url: 'http://' + ip + port + '/?extension=education' + '&name=headMovement' + '&p1=' + p1 + '&p2=' + p2 + '&p3=' + p3 + '&p4=' + p4,
+            dataType: 'text',
+            crossDomain: true,
+            success: function (data) {
+                console.log("success handler");
+                callback();
+             
+                if (data == 'Must set Zenbo IP')
+                if (zenboIPWarningWindowFlag === true) showAlertMessage();               
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("error handler");
+                if (zenboIPWarningWindowFlag === true) showAlertMessage(); 
+            }
+        });
+
+    };
+	
     ext.Head_movement = function (p1, p2, callback) {
 		
 	    for(var i = 0; i < translate.head_direction.length; i++){
@@ -459,9 +515,11 @@ function showAlertMessage()
 	     for(var j = 0; j < translate.head_degree.length; j++){
 
             if ( p2 == translate.head_degree[j]) {                                         
-		         p2 = TRANSLATIONS.us.head_degree[j];
+                if (( p1 == TRANSLATIONS.us.head_direction[3]) && ( j > 1))
+		            p2 = TRANSLATIONS.us.head_degree[1];
+                else
+		            p2 = TRANSLATIONS.us.head_degree[j];
             }   
-	  
         }	
 		
         console.log("Head_movement");
@@ -1719,8 +1777,11 @@ function showAlertMessage()
 		    recordVideo: ' %m.recordVideoItems %m.recordVideoSizes video recording, file name: %s',
 		    startWheelLight: 'start Wheel light with %m.wheelLightLights wheel %m.wheelLightSpeed color %m.startWheelLightColor and effect %m.startWheelLightEffect',
 		    stopWheelLight: 'stop Wheel light %m.wheelLightLights wheel',
+            headMovement: 'turn head to the %m.headLRDirection by %m.headLRDegree degree(s)  %m.headUDDirection by %m.headUDDegree degree(s)',
 	        head_direction: ["left", "right", "top", "bottom"],
             head_degree: ["0", "15", "30", "45"],
+            headLRDegree: ["0", "15", "30", "45"],
+            headUDDegree: ["0", "15", "30", "45"],
             move_direction: ["forward", "backward"],
             move_far: ["0.25", "0.50", "0.75", "1.00", "1.25", "1.50", "1.75", "2.00"],
             move_speed: ["slowly", "normally", "fast"],
@@ -1759,6 +1820,8 @@ function showAlertMessage()
             wheelLightSpeed: ["slowest", "slow", "normal", "fast", "fastest"],
 			startWheelLightColor: ["white", "red", "orange", "yellow", "green", "blue", "indigo", "purple", "pink"],
 			startWheelLightEffect: ["static", "blinking", "breathing", "forward marquee", "backward marquee"],
+	        headLRDirection: ["left", "right"],
+	        headUDDirection: ["up", "down"],
 			stop_sending_commands_to_target: 'disconnect Zenbo',
 			pleaseSetupZenboIP: 'Please setup Zenbo IP!',
 			checkBoxMessage   : 'never prompt again',
@@ -1798,8 +1861,11 @@ function showAlertMessage()
     		recordVideo: ' %m.recordVideoItems %m.recordVideoSizes 錄影, 檔名: %s',
 	        startWheelLight: '開始燈光 %m.wheelLightLights 輪 %m.wheelLightSpeed %m.startWheelLightColor 色 %m.startWheelLightEffect 效果',
 		    stopWheelLight: '停止燈光效果 %m.wheelLightLights 輪',
+            headMovement: '轉動頭部 向  %m.headLRDirection %m.headLRDegree 度  %m.headUDDirection %m.headUDDegree 度',
     	    head_direction: ["左", "右", "上", "下"],
             head_degree: ["0", "15", "30", "45"],
+            headLRDegree: ["0", "15", "30", "45"],
+            headUDDegree: ["0", "15", "30", "45"],
             move_direction: ["前進", "後退"],
             move_far: ["0.25", "0.50", "0.75", "1.00", "1.25", "1.50", "1.75", "2.00"],
             move_speed: ["慢", "一般", "快"],
@@ -1835,6 +1901,8 @@ function showAlertMessage()
 			wheelLightSpeed: ["最慢", "慢", "正常", "快", "最快"],
 			startWheelLightColor: ["白", "紅", "橙", "黃", "綠", "藍", "靛", "紫", "粉紅"],
 			startWheelLightEffect: ["恆亮", "閃爍", "呼吸", "前轉跑馬燈", "後轉跑馬燈"],
+	        headLRDirection: ["左", "右"],
+	        headUDDirection: ["上", "下"],
 			stop_sending_commands_to_target: '斷線',
 		    pleaseSetupZenboIP: '請先設置 Zenbo IP！',
 			checkBoxMessage   : '永遠不再提示',
@@ -1875,7 +1943,8 @@ function showAlertMessage()
             ['w', translate.Setting_targetIP, 'Setting_targetIP', "127.0.0.1"],
             ['w', translate.Body_movement, 'Body_movement', translate.move_direction[0], translate.move_far[0], translate.move_speed[0]],
             ['', translate.Stop_moving, 'Stop_moving'],
-            ['w', translate.Head_movement, 'Head_movement', translate.head_direction[0], translate.head_degree[3]], 
+            ['w', translate.headMovement, 'headMovement', translate.headLRDirection[0], translate.headLRDegree[0], translate.headUDDirection[0], translate.headUDDegree[1]], 
+            ['w', translate.Head_movement, 'Head_movement', translate.head_direction[2], translate.head_degree[1]], 
             ['w', translate.Body_turn, 'Body_turn', translate.body_turn_direction[0], translate.body_turn_degree[3]],
             ['', translate.Remote_control_body, 'Remote_control_body', translate.remote_control_body[3]],
           //  ['', translate.Action, 'Action', translate.action_type[3]],
@@ -1908,8 +1977,12 @@ function showAlertMessage()
             ['', translate.stopWheelLight, 'stopWheelLight', translate.wheelLightLights[0]],  
         ],
         menus: {
+            "headLRDirection": translate.headLRDirection,
+            "headUDDirection": translate.headUDDirection,
             "head_direction": translate.head_direction,
             "head_degree": translate.head_degree,
+            "headLRDegree": translate.headLRDegree,
+            "headUDDegree": translate.headUDDegree,
             "move_direction": translate.move_direction,
             "move_far": translate.move_far,
             "move_speed": translate.move_speed,
