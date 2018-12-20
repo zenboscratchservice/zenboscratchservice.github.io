@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zenbo Scratch - 關於我們</title>
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<!--add lity-->
+<link href="../../css/lity.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script>
+//圖片縮圖
+$(window).load(function(){
+$("img").each(function(i){
+if($(this).attr("alumb")=="true"){
+//移除目前設定的影像長寬
+$(this).removeAttr('width');
+$(this).removeAttr('height');
+
+//取得影像實際的長寬
+var imgW = $(this).width();
+var imgH = $(this).height();
+
+//計算縮放比例
+var w=$(this).attr("_w")/imgW;
+var h=$(this).attr("_h")/imgH;
+var pre=1;
+if(w>h){
+pre=h;
+}else{
+pre=w;
+}
+
+//設定目前的縮放比例
+$(this).width(imgW*pre);
+$(this).height(imgH*pre);
+}
+});
+});
+</script>
+
+</head>
+<body>
+<div id="background-pink"> background </div>
+<div class="page">
+  <div class="whatsnew-page">
+    <div class="sidebar"> <a id="logo"><img src="../../images/logo.png" alt="logo"></a>
+      <ul>
+        <li class="home"> <a href="../../index.html">首頁</a> </li>
+		<li class="selected whatsnew"> <a href="../whatsnew.html">最新消息</a> </li>
+        <li class="start"> <a href="../start.html">開始使用</a> </li>
+		<li class="scratch3"> <a href="../start_scratch3.html">Scratch3.0</a> </li>
+        <li class="example"> <a href="../example_pro.html">範例</a> </li>
+        <li class="block"> <a href="../block_pro.html">積木</a> </li>
+        <li class="about"> <a href="../about.html">關於</a> </li>  
+      </ul>
+    </div>
+    <div class="body">
+      <div class="content-about">
+        <div>
+          <h3>最新消息 What's New</h3>
+        </div>
+        <div class="featured"> <img src="../../images/title-pic-whatsnew.jpg" alt=""> </div>
+        <div>
+          <div>
+           	<h1>2018/12/18</h1>
+            <h1>如何在 Scratch 3.0 使用下載的範例？使用步驟說明：</h1>
+            
+                <!-- space -->
+            	<span style="display:inline-block; height: 10px"></span><p></p>	
+           
+               
+            	
+            <h1> 步驟： </h1>
+            <p> 1. 在 <a href="../start_scratch3.html">開始使用 Scratch 3.0 </a>頁面可以連結到我們團隊準備的 Scratch 網站，並可以下載範例程式︰</p>
+            
+            
+            <p> 2. 從頁面的連結進入我們準備的 Scratch 3.0 網站，如下圖依序點選　"檔案"，"從你的電腦挑選"</p>
+            
+            <p> 
+            <a class="example-image-link" href="../../images/announce/use_scratch3_example/use_scratch_example_1.jpg" data-lity> 
+            	<img src="../../images/announce/use_scratch3_example/use_scratch_example_1s.jpg" alumb="true" _w="720"/>
+            </a>
+            </p>            
+            
+            <p> 3. 在接下來跳出的視窗中，選擇並打開您下載的範例程式，通常副檔名會是.sb3：</p>
+            
+	        <p> 
+            <a class="example-image-link" href="../../images/announce/use_scratch3_example/use_scratch_example_2.jpg" data-lity> 
+            	<img src="../../images/announce/use_scratch3_example/use_scratch_example_2s.jpg" alumb="true" _w="720"/>
+            </a>
+            </p>  		  
+			  
+	        
+			<p> 3. 等待讀取完成，就會顯示範例程式的畫面了！：</p>
+            
+	        <p> 
+            <a class="example-image-link" href="../../images/announce/use_scratch3_example/use_scratch_example_3.jpg" data-lity> 
+            	<img src="../../images/announce/use_scratch3_example/use_scratch_example_3s.jpg" alumb="true" _w="720"/>
+            </a>
+            </p>		  
+             
+              
+			  
+          </div>
+        </div>
+      </div>
+      <!--.content-start-->
+      
+    </div>
+  </div>
+	
+	
+      <!-- footers-->
+      <div class="footer"> 
+        <ul>
+          <li> <a href="../../index.html">首頁</a> </li>
+          <li> <a href="../start.html">開始使用</a> </li>
+		  <li> <a href="../start_scratch3.html"> Scratch 3.0</a> </li>
+          <li> <a href="../example_pro.html">範例</a> </li>
+          <li> <a href="../block_pro.html">積木</a> </li>
+          <li> <a href="../about.html">關於</a> </li>
+        </ul>
+      </div>
+	  <div class="footer-middle">
+		<div class="footer-middle-facebook" style="cursor: pointer;" onclick="window.open('https://www.facebook.com/scratch.zenbo.3','_newtab');"> <img src="../../images/footer-facebook.png" alt=""><a> Facebook </a> </div>
+		<div class="footer-middle-youtube" style="cursor: pointer;" onclick="window.open('https://www.youtube.com/channel/UCpHbyKwWAkbJ2terDCcGbYA','_newtab');"> <img src="../../images/footer-youtube.png" alt=""> <a href="" target="youtube_tag1" id="youtube">Youtube</a> </div>
+		<div class="footer-middle-email" style="cursor: pointer;" onclick="window.open('mailto:zenbo.scratchservice@gmail.com','_newtab');"> <img src="../../images/footer-email.png" alt=""><a>Email: zenbo.scratchservice@gmail.com</a> </div>
+	  </div>
+      <div class="footer-bottom">
+        <ul>
+          <li> <img src="../../images/footer-earth.png" alt=""><a href="../language.html">繁體中文</a> </li>
+        </ul>
+        <ul>
+          <li> <a>&#169; 2017-2018 Zenbo Dev Lab</a> </li>
+        </ul>
+      </div>
+</div>
+
+<!--add lity--> 
+<script src="../../js/jquery.js"></script> 
+<script src="../../js/lity.js"></script>
+</body>
+</html>
